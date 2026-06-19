@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GGTV - लाइभ टिभी, समाचार, खेलकुद र थप</title>
-    <link rel="icon" type="image/png" href="static/picture/logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>GGTV - TV en vivo, noticias, deportes y mucho más</title>
+    <link href="static/picture/logo.png" rel="icon" type="image/png" />
+    <link href="https://fonts.googleapis.com/" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link href="static/css/css2.css" rel="stylesheet" />
 
     <style>
         * {
@@ -22,7 +23,7 @@
         }
 
         body {
-            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             background-color: #3D403E;
             color: #ffffff;
             line-height: 1.7;
@@ -40,7 +41,7 @@
             padding: 0 20px;
         }
 
-        /* Header Navigation */
+        /* Encabezado Navigation */
         .header {
             background-color: #1a1a1a;
             padding: 15px 0;
@@ -182,7 +183,7 @@
             transform: translateY(-7px) rotate(-45deg);
         }
 
-        /* Table of Contents */
+        /* Tabla de contenidos */
         .toc {
             background-color: #222222;
             border-radius: 8px;
@@ -234,7 +235,7 @@
             font-weight: 400;
         }
 
-        /* Main Content */
+        /* Contenido principal */
         .main-content {
             padding: 30px 0;
         }
@@ -244,7 +245,7 @@
             background-color: #333538;
         }
 
-        /* Hero Section */
+        /* Sección principal */
         .hero-section {
             display: flex;
             background-color: #222222;
@@ -315,7 +316,7 @@
             transform: scale(1.05);
         }
 
-        /* Description Sections */
+        /* Sección de descripcións */
         .description-section {
             margin-bottom: 30px;
         }
@@ -348,7 +349,7 @@
             text-align: center;
         }
 
-        /* Screenshots Gallery */
+        /* Galería de capturas */
         .screenshots-gallery {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -381,7 +382,7 @@
             line-height: 1.8;
         }
 
-        /* Info Box */
+        /* Caja informativa */
         .info-box {
             background-color: #1e4a3d;
             border-left: 4px solid #2e7d5a;
@@ -473,7 +474,7 @@
             color: #ffffff;
         }
 
-        /* Logo Center */
+        /* Logotipo centrado */
         .logo-center {
             text-align: center;
             margin: 40px 0;
@@ -608,7 +609,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
-        /* Smart TV Section */
+        /* Sección de televisor inteligente */
         .smarttv-intro {
             font-size: 16px;
             color: #ffffff;
@@ -721,7 +722,7 @@
             margin: 0;
         }
 
-        /* Conclusion Section */
+        /* Sección de conclusión */
         .conclusion-text {
             font-size: 16px;
             color: #ffffff;
@@ -729,7 +730,7 @@
             margin-bottom: 25px;
         }
 
-        /* Footer */
+        /* Pie de página */
         .footer {
             background-color: #27292b;
             padding: 20px 0;
@@ -912,11 +913,12 @@
 </head>
 
 <body>
-    <!-- Header -->
+
+    <!-- Encabezado -->
     <header class="header">
         <div class="container">
             <div class="logo-section">
-                <img src="static/picture/logo.png" alt="GGTV">
+                <img alt="GGTV" src="static/picture/logo.png" />
                 <span>GGTV</span>
             </div>
             <div class="menu-toggle" onclick="toggleMobileMenu()">
@@ -925,457 +927,518 @@
                 <span></span>
             </div>
             <nav class="nav-links">
-                <a href="#">गृहपृष्ठ</a>
-                <a href="#" class="nav-download">डाउनलोड</a>
-                <a href="#">ब्लग</a>
+                <a href="#">Inicio</a>
+                <a class="nav-download" href="#">Descargar</a>
+                <a href="#">Artículos</a>
                 <div class="nav-dropdown">
-                    <span class="nav-dropdown-toggle">साइट लिङ्क: <svg viewbox="0 0 24 24">
+                    <span class="nav-dropdown-toggle">Enlaces del sitio: <svg viewbox="0 0 24 24">
                             <path d="M7 10l5 5 5-5z"></path>
                         </svg></span>
                     <div class="nav-dropdown-menu">
-                        <a href="#">हाम्रो बारेमा</a>
-                        <a href="#">DMCA प्रतिलिपि अधिकार</a>
-                        <a href="#">गोपनीयता नीति</a>
-                        <a href="#">नियम र सर्तहरू</a>
-                        <a href="#">हामीलाई सम्पर्क गर्नुहोस्</a>
+                        <a href="#">Sobre nosotros</a>
+                        <a href="#">Derechos de autor DMCA</a>
+                        <a href="#">Política de privacidad</a>
+                        <a href="#">Términos y condiciones</a>
+                        <a href="#">Contáctanos</a>
                     </div>
                 </div>
             </nav>
         </div>
     </header>
-
-    <!-- Main Content -->
+    <!-- Contenido principal -->
     <main class="main-content">
         <div class="container">
-            <!-- Hero Section -->
-            <section id="hero" class="hero-section">
+            <!-- Sección principal -->
+            <section class="hero-section" id="hero">
                 <div class="hero-logo">
-                    <img src="static/picture/logo.png" alt="GGTV">
+                    <img alt="GGTV" src="static/picture/logo.png" />
                 </div>
                 <div class="hero-content">
-                    <h1>GGTV – लाइभ टिभी, समाचार, खेलकुद र थप...</h1>
-                    <p>GGTV केवल अर्को स्ट्रिमिङ एप मात्र होइन; यो बढ्दो सदस्यता शुल्कको लागि तपाईंको उत्तम उपाय हो! बिना कुनै पप-अप विज्ञापनहरू आफ्ना मनपर्ने खेलकुदहरू हेर्नुहोस्, प्रत्यक्ष समाचारहरू थाहा पाउनुहोस्, र रियालिटी शोहरू, चलचित्रहरू र संगीतको आनन्द लिनुहोस्। यस वेबसाइटबाट, तपाईंले एन्ड्रोइड (Android), आईओएस (iOS), पीसी (PC), र स्मार्ट टिभी (Smart TV) उपकरणहरूको लागि GGTV APK को अद्यावधिक गरिएको संस्करण नि:शुल्क डाउनलोड गर्न सक्नुहुन्छ।</p>
-                    <p class="version-info">संस्करण: १.०.० / ५००K+ डाउनलोडहरू / ४.७ रेटिङ</p>
-                    <a href="#" class="download-btn">डाउनलोड गर्नुहोस्</a>
+                    <h1>GGTV – TV en vivo, noticias, deportes y mucho más...</h1>
+                    <p>GGTV no es solo otra aplicación de streaming; es la solución para evitar esas cuotas de
+                        suscripción cada vez más altas. Disfruta tus deportes favoritos, mira noticias en vivo y
+                        relájate con realities, películas y música sin anuncios emergentes. Desde este sitio web puedes
+                        descargar gratis la versión actualizada de GGTV APK para Android, iOS, PC y televisores
+                        inteligentes.</p>
+                    <p class="version-info">Versión: 1.0.0 / Más de 500K descargas / Calificación 4.7</p>
+                    <a class="download-btn" href="#">Descargar</a>
                 </div>
             </section>
-
-            <!-- Table of Contents -->
+            <!-- Tabla de contenidos -->
             <nav class="toc">
                 <div class="toc-header"></div>
                 <ul class="toc-list">
-                    <li><a href="#hero">१ GGTV – लाइभ टिभी, समाचार, खेलकुद र थप...</a></li>
-                    <li class="toc-sub"><a href="#introduction">१.१ GGTV को परिचय</a></li>
-                    <li class="toc-sub"><a href="#how-to-use">१.२ लाइभ टिभी हेर्न GGTV कसरी प्रयोग गर्ने?</a></li>
-                    <li class="toc-sub"><a href="#features">१.३ GGTV APK का विशेषताहरू</a></li>
-                    <li class="toc-sub-deep"><a href="#feature-4k">१.३.१ ४K गुणस्तरको स्ट्रिमिङ</a></li>
-                    <li class="toc-sub-deep"><a href="#feature-favorites">१.३.२ मनपर्ने सूची (Favorites List) सिर्जना गर्नुहोस्</a></li>
-                    <li class="toc-sub-deep"><a href="#feature-no-ads">१.३.३ झन्झटिलो विज्ञापन नभएको</a></li>
-                    <li class="toc-sub-deep"><a href="#feature-sports-news">१.३.४ लाइभ खेलकुद र समाचार</a></li>
-                    <li class="toc-sub-deep"><a href="#feature-updates">१.३.५ नियमित अपडेटहरू</a></li>
-                    <li class="toc-sub-deep"><a href="#feature-1000-channels">१.३.६ १००० भन्दा बढी टिभी च्यानलहरू</a></li>
-                    <li class="toc-sub-deep"><a href="#feature-languages">१.३.७ बहुभाषी समर्थन</a></li>
-                    <li class="toc-sub-deep"><a href="#feature-international">१.३.८ अन्तर्राष्ट्रिय टिभी च्यानलहरू अन्वेषण गर्नुहोस्</a></li>
-                    <li class="toc-sub-deep"><a href="#feature-interface">१.३.९ प्रयोग गर्न सजिलो इन्टरफेस</a></li>
-                    <li class="toc-sub"><a href="#extra-features">१.४ अतिरिक्त विशेषताहरू</a></li>
-                    <li class="toc-sub"><a href="#download-version">१.५ GGTV APK पछिल्लो संस्करण २०२५ डाउनलोड गर्नुहोस्</a></li>
-                    <li class="toc-sub"><a href="#install">१.६ GGTV APK कसरी डाउनलोड र स्थापना (Install) गर्ने</a></li>
-                    <li class="toc-sub-deep"><a href="#install-step1">१.६.१ चरण १: GGTV एप डाउनलोड गर्नुहोस्</a></li>
-                    <li class="toc-sub-deep"><a href="#install-step2">१.६.२ चरण २: अज्ञात स्रोतहरू (Unknown Sources) सक्षम गर्नुहोस्</a></li>
-                    <li class="toc-sub-deep"><a href="#install-step3">१.६.३ चरण ३: APK फाइल पत्ता लगाउनुहोस्</a></li>
-                    <li class="toc-sub-deep"><a href="#install-step4">१.६.४ चरण ४: स्थापना (Install) र सुरु गर्नुहोस्</a></li>
-                    <li class="toc-sub"><a href="#smarttv">१.७ स्मार्ट टिभीमा GGTV एप कसरी डाउनलोड र स्थापना गर्ने?</a></li>
-                    <li class="toc-sub"><a href="#alternatives">१.८ GGTV का सर्वश्रेष्ठ विकल्पहरू</a></li>
-                    <li class="toc-sub"><a href="#faqs">१.९ बारम्बार सोधिने प्रश्नहरू (FAQs)</a></li>
-                    <li class="toc-sub-deep"><a href="#faq-safe">१.९.१ GGTV APK प्रयोग गर्न कत्तिको सुरक्षित छ?</a></li>
-                    <li class="toc-sub-deep"><a href="#faq-smarttv">१.९.२ के म स्मार्ट टिभीमा GGTV स्थापना गर्न सक्छु?</a></li>
-                    <li class="toc-sub-deep"><a href="#faq-legal">१.९.३ के GGTV एप प्रयोग गर्नु कानुनी रूपमा सही छ?</a></li>
-                    <li class="toc-sub-deep"><a href="#faq-iphone">१.९.४ आईफोन (iPhone) मा GGTV कसरी प्रयोग गर्ने?</a></li>
-                    <li class="toc-sub-deep"><a href="#faq-content">१.९.५ म GGTV एपमा कस्तो प्रकारको सामग्री हेर्न सक्छु?</a></li>
-                    <li class="toc-sub-deep"><a href="#faq-available">१.९.६ के GGTV अमेरिका, बेलायत, युरोप, भारत, इन्डोनेसिया र टर्कीमा उपलब्ध छ?</a></li>
-                    <li class="toc-sub"><a href="#conclusion">१.१० निष्कर्ष</a></li>
+                    <li><a href="#hero">1 GGTV – TV en vivo, noticias, deportes y mucho más...</a></li>
+                    <li class="toc-sub"><a href="#introduction">1.1 Introducción a GGTV</a></li>
+                    <li class="toc-sub"><a href="#how-to-use">1.2 ¿Cómo usar GGTV para ver TV en vivo?</a></li>
+                    <li class="toc-sub"><a href="#features">1.3 Funciones de GGTV APK</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-4k">1.3.1 Streaming en calidad 4K</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-favorites">1.3.2 Crear una lista de favoritos</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-no-ads">1.3.3 Sin anuncios molestos</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-sports-news">1.3.4 Deportes y noticias en vivo</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-updates">1.3.5 Actualizaciones regulares</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-1000-channels">1.3.6 Más de 1000 canales de TV</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-languages">1.3.7 Varios idiomas</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-international">1.3.8 Explora canales internacionales de
+                            TV</a></li>
+                    <li class="toc-sub-deep"><a href="#feature-interface">1.3.9 Interfaz fácil de usar</a></li>
+                    <li class="toc-sub"><a href="#extra-features">1.4 Funciones adicionales</a></li>
+                    <li class="toc-sub"><a href="#download-version">1.5 Descargar GGTV APK última versión 2025</a></li>
+                    <li class="toc-sub"><a href="#install">1.6 Cómo descargar e instalar GGTV APK</a></li>
+                    <li class="toc-sub-deep"><a href="#install-step1">1.6.1 Paso 1: Descargar la app GGTV</a></li>
+                    <li class="toc-sub-deep"><a href="#install-step2">1.6.2 Paso 2: Habilitar fuentes desconocidas</a>
+                    </li>
+                    <li class="toc-sub-deep"><a href="#install-step3">1.6.3 Paso 3: Localizar el archivo APK</a></li>
+                    <li class="toc-sub-deep"><a href="#install-step4">1.6.4 Paso 4: Instalar y abrir GGTV</a></li>
+                    <li class="toc-sub"><a href="#smarttv">1.7 ¿Cómo descargar e instalar GGTV en un televisor
+                            inteligente?</a></li>
+                    <li class="toc-sub"><a href="#alternatives">1.8 Mejores alternativas a GGTV</a></li>
+                    <li class="toc-sub"><a href="#faqs">1.9 Preguntas frecuentes</a></li>
+                    <li class="toc-sub-deep"><a href="#faq-safe">1.9.1 ¿Qué tan seguro es usar GGTV APK?</a></li>
+                    <li class="toc-sub-deep"><a href="#faq-smarttv">1.9.2 ¿Puedo instalar GGTV en un televisor
+                            inteligente?</a></li>
+                    <li class="toc-sub-deep"><a href="#faq-legal">1.9.3 ¿Es legal usar la app GGTV?</a></li>
+                    <li class="toc-sub-deep"><a href="#faq-iphone">1.9.4 ¿Cómo usar GGTV en iPhone?</a></li>
+                    <li class="toc-sub-deep"><a href="#faq-content">1.9.5 ¿Qué tipo de contenido puedo ver en la app
+                            GGTV?</a></li>
+                    <li class="toc-sub-deep"><a href="#faq-available">1.9.6 ¿GGTV está disponible en Estados Unidos,
+                            Reino Unido, Europa, India, Indonesia y Turquía?</a></li>
+                    <li class="toc-sub"><a href="#conclusion">1.10 Conclusión</a></li>
                 </ul>
             </nav>
-
-            <!-- Description Section -->
+            <!-- Sección de descripción -->
             <section class="description-section">
-                <p>GGTV आजको संसारमा सबैभन्दा शक्तिशाली स्ट्रिमिङ उपकरण हो। यसले १३० भन्दा बढी देशहरूका १००० भन्दा बढी टिभी च्यानलहरू ल्याउँदछ। केवल अन्तरक्रियात्मक ग्लोबबाट आफ्नो देश रोज्नुहोस् र तपाईंले हेर्न चाहनुभएको टिभी च्यानल चयन गर्नुहोस्, बस त्यत्ति हो। तपाईं जहाँसुकैबाट पनि लाइभ खेलकुद, हास्य टिभी कार्यक्रमहरू, रियालिटी शोहरू, र समाचारहरू तुरुन्तै हेर्न सक्नुहुन्छ।</p>
-
-                <p>स्ट्रिमिङ एपहरूले तपाईंको मोबाइल फोनमा जुनसुकै बेला माग अनुसार टिभी च्यानलहरू, चलचित्रहरू, खेलकुद र समाचारहरू पहुँच गर्न धेरै सजिलो बनाएका छन्। तपाईं यात्रा गर्दा वा अफिसको खाजा खाने समयमा टिभी कार्यक्रमहरू हेर्न सक्नुहुन्छ। प्रत्यक्ष टिभी हेर्नका लागि GGTV तपाईंको पहिलो रोजाइको एप हो! तपाईं यसलाई फुटबल, क्रिकेट, बास्केटबल हेर्न प्रयोग गर्न सक्नुहुन्छ, वा क्षेत्रीय तथा अन्तर्राष्ट्रिय समाचार च्यानलहरूसँग अद्यावधिक रहन सक्नुहुन्छ।</p>
-
-                <p>GGTV एपमा भएका सबै टिभी च्यानलहरू उच्च गुणस्तरमा उपलब्ध छन् र विज्ञापन-रहित भिडियो प्लेब्याकलाई समर्थन गर्छन्। यस एपको व्यवस्थित रूपमा मिलाइएको सामग्री पुस्तकालयले तपाईंलाई आफ्नो मनपर्ने टिभी च्यानल छिटो पत्ता लगाउन मद्दत गर्दछ। केवल मेनुमा जानुहोस्, र तपाईंले चलचित्र, खेलकुद, संगीत, कमेडी, समाचार जस्ता धेरै विधाहरू देख्नुहुनेछ! तपाईंले रुचि राख्नुभएको विधामा क्लिक गर्नुहोस् र त्यस श्रेणीका लागि उपलब्ध सबै च्यानलहरू हेर्न आफ्नो क्षेत्र छनौट गर्नुहोस्। एकदमै सजिलो!</p>
+                <p>GGTV es una de las herramientas de streaming más potentes de la actualidad. Reúne más de 1000 canales
+                    de TV de 130 países. Solo tienes que elegir tu país en el globo interactivo, seleccionar el canal
+                    que quieres ver y listo. Puedes disfrutar al instante de deportes en vivo, programas de comedia,
+                    realities y noticias desde cualquier lugar.</p>
+                <p>Las aplicaciones de streaming han hecho que sea muy fácil acceder a canales de TV, películas,
+                    deportes y noticias bajo demanda desde tu teléfono móvil. Puedes ver programas mientras viajas o
+                    durante el descanso del almuerzo en la oficina. GGTV es tu app ideal para ver TV en vivo. Puedes
+                    usarla para ver fútbol, críquet, baloncesto o para mantenerte informado con canales de noticias
+                    regionales e internacionales.</p>
+                <p>Todos los canales de TV de la <a href="#">app GGTV</a> están disponibles en alta resolución y admiten
+                    reproducción de video sin anuncios. La biblioteca de contenido, organizada de forma clara, te ayuda
+                    a encontrar rápidamente tu canal favorito. Solo entra al menú y verás categorías como películas,
+                    deportes, música, comedia y noticias. Haz clic en la categoría que te interese y elige tu región
+                    para ver todos los canales disponibles. ¡Así de fácil!</p>
             </section>
-
-            <!-- Introduction Section -->
-            <div id="introduction" class="section-title">GGTV को परिचय</div>
-
+            <!-- Sección de introducción -->
+            <div class="section-title" id="introduction">Introducción a GGTV</div>
             <section class="description-section">
-                <p>GGTV ले सरलता, विश्वसनीयता, र बिना कुनै बफरिङ तीव्र गतिको स्ट्रिमिङ अनुभवलाई महत्त्व दिन्छ। यो एप विश्वव्यापी रूपमा उपलब्ध छ र यसमा क्षेत्रीय तथा अन्तर्राष्ट्रिय च्यानलहरू समावेश छन्। यसले खाता बनाउने, साइन अप गर्ने वा सदस्यता शुल्क तिर्ने कुनै झन्झट बिना प्रत्यक्ष टिभी हेर्ने प्रयोगकर्ता-अनुकूल तरिका प्रदान गर्दछ।</p>
-
-                <p>यो एपको उद्देश्य प्रत्यक्ष टिभी च्यानलहरूमा पहुँच अत्यन्तर सुविधाजनक बनाउनु हो। यसको डार्क थिम सहितको सरल डिजाइन र लेआउट छ, जसले टिभी कार्यक्रमहरू हेर्नका लागि उत्कृष्ट वातावरण सिर्जना गर्दछ। आजकल, कोही पनि घरमा केबल टिभी जडान राख्न चाहँदैनन्, किनकि सबैजना प्रविधिसँगै अघि बढ्दै OTT र लाइभ स्ट्रिमिङ एपहरू तर्फ आकर्षित भइरहेका छन्। GGTV सम्भवतः सबैभन्दा राम्रो नि:शुल्क स्ट्रिमिङ एप हो जसलाई तपाईंले आफ्नो एन्ड्रोइड स्मार्टफोनमा डाउनलोड र स्थापना गरेर बिना कुनै झन्झट ४K गुणस्तरसम्म वास्तविक समयका घटनाहरू हेर्न सुरु गर्न सक्नुहुन्छ।</p>
-
-                <p>यदि तपाईं यस एपको छोटो जानकारीबाट उत्साहित हुनुहुन्छ भने, पर्खनुहोस्, यसमा अझ धेरै कुराहरू छन्। यस ब्लगमा, हामी GGTV APK, यसका विशेषताहरू, प्रयोग गर्ने तरिका, विभिन्न उपकरणहरूमा स्थापना गर्ने विधि, अनुकूलता र थप कुराहरूको बारेमा गहिरो ज्ञान प्राप्त गर्नेछौं। धैर्य गर्नुहोस्! हामी तपाईंलाई GGTV एपको एउटा रमाइलो परिचय दिनेछौं, जुन लाइभ खेलकुद हेर्न वा चलचित्रहरूको आनन्द लिनको लागि उत्तम विकल्प हो।</p>
+                <p>GGTV valora la simplicidad, la fiabilidad y una experiencia de streaming rápida, sin interrupciones
+                    ni buffering. La app está disponible en todo el mundo e incluye canales regionales e
+                    internacionales. Ofrece una forma sencilla de explorar la TV en vivo sin crear una cuenta,
+                    registrarse ni pagar suscripciones.</p>
+                <p>Esta app tiene como objetivo facilitar al máximo el acceso a canales de TV en vivo. Cuenta con un
+                    diseño simple, una distribución clara y un tema oscuro que crea un ambiente ideal para ver
+                    programas. Hoy en día, casi nadie quiere depender de la televisión por cable en casa, porque cada
+                    vez más personas avanzan hacia la tecnología, las plataformas OTT y las apps de streaming en vivo.
+                    GGTV es una de las mejores aplicaciones gratuitas de streaming que puedes descargar e instalar en tu
+                    smartphone Android para empezar a ver eventos en tiempo real con calidad de hasta 4K y sin
+                    distracciones.</p>
+                <p>Si esta breve presentación de la app ya te llamó la atención, espera, porque tiene mucho más que
+                    ofrecer. En esta guía veremos en detalle GGTV APK, sus funciones, guías de uso, instalación en
+                    distintos dispositivos, compatibilidad y mucho más. Prepárate para conocer la app GGTV, una
+                    excelente opción si te gusta ver deportes en vivo o disfrutar maratones de películas.</p>
             </section>
-
-            <!-- Screenshots Gallery -->
+            <!-- Galería de capturas -->
             <section class="screenshots-gallery">
                 <div class="screenshot-item">
-                    <img src="static/picture/TV-Garden-Screenshot-1.webp" alt="टिभी गार्डन स्क्रिनसट १">
+                    <img alt="Captura de pantalla de GGTV 1" src="static/picture/TV-Garden-Screenshot-1.webp" />
                 </div>
                 <div class="screenshot-item">
-                    <img src="static/picture/TV-Garden-Screenshot-2.webp" alt="टिभी गार्डन स्क्रिनसट २">
+                    <img alt="Captura de pantalla de GGTV 2" src="static/picture/TV-Garden-Screenshot-2.webp" />
                 </div>
                 <div class="screenshot-item">
-                    <img src="static/picture/TV-Garden-Screenshot-3.webp" alt="टिभी गार्डन स्क्रिनसट ३">
+                    <img alt="Captura de pantalla de GGTV 3" src="static/picture/TV-Garden-Screenshot-3.webp" />
                 </div>
                 <div class="screenshot-item">
-                    <img src="static/picture/TV-Garden-Screenshot-4.webp" alt="टिभी गार्डन स्क्रिनसट ४">
+                    <img alt="Captura de pantalla de GGTV 4" src="static/picture/TV-Garden-Screenshot-4.webp" />
                 </div>
             </section>
-
-            <!-- How to Use Section -->
-            <div id="how-to-use" class="section-title">लाइभ टिभी हेर्न GGTV कसरी प्रयोग गर्ने?</div>
-
+            <!-- Sección de uso -->
+            <div class="section-title" id="how-to-use">¿Cómo usar GGTV para ver TV en vivo?</div>
             <section class="description-section">
                 <ul class="steps-list">
-                    <li>तपाईंको उपयुक्त उपकरणमा GGTV एप डाउनलोड र स्थापना गर्न हाम्रो स्थापना गाइड पालना गर्नुहोस्।</li>
-                    <li>एप खोल्नुहोस् र स्क्रिनमा देखिने ग्लोबमा आफ्नो देश पत्ता लगाउनुहोस्, त्यसपछि यसलाई खोल्न आफ्नो क्षेत्रमा क्लिक गर्नुहोस्।</li>
-                    <li>अब, तपाईंसँग सबै टिभी च्यानलहरूको सूची हुनेछ, त्यसैले तल स्क्रोल गर्नुहोस् र तपाईंले स्ट्रिम गर्न चाहनुभएको च्यानलमा क्लिक गर्नुहोस्।</li>
-                    <li>तपाईंले टिभी च्यानलमा ट्याप गरेपछि, यसले चयन गरिएको च्यानलबाट प्रत्यक्ष प्रसारण सुरु गर्नेछ।</li>
-                    <li>भिडियोलाई फुल-स्क्रिन मोडमा प्ले गर्नुहोस्, आवाजलाई ठिक्क स्तरमा मिलाउनुहोस्, र तपाईं तयार हुनुभयो। हेरेर आनन्द लिनुहोस्!</li>
+                    <li>Sigue nuestra guía de instalación para descargar e instalar la app GGTV en tu dispositivo
+                        compatible.</li>
+                    <li>Abre la app y busca tu país en el globo que aparece en la pantalla; después, toca tu región para
+                        abrirla.</li>
+                    <li>Ahora verás la lista de todos los canales de TV. Desplázate hacia abajo y toca el canal que
+                        quieres ver.</li>
+                    <li>Cuando toques el canal de TV, comenzará la transmisión en vivo del canal seleccionado.</li>
+                    <li>Reproduce el video en pantalla completa, ajusta el volumen al nivel adecuado y listo. ¡Disfruta
+                        viendo!</li>
                 </ul>
             </section>
-
-            <!-- Info Box -->
+            <!-- Caja informativa -->
             <div class="info-box">
-                <p>के तपाईंसँग एन्ड्रोइड टिभी छ? स्मार्ट टिभीमा यो एप डाउनलोड र प्रयोग गर्ने विस्तृत गाइडको लागि 'स्मार्ट टिभीका लागि GGTV' पृष्ठ जाँच गर्नुहोस्।</p>
+                <p>¿Tienes un televisor Android? Consulta la página de GGTV para televisores inteligentes para ver una
+                    guía detallada sobre cómo descargar y usar esta app en tu televisor.</p>
             </div>
-
-            <!-- Features Section -->
-            <div id="features" class="section-title">GGTV APK का विशेषताहरू</div>
-
-            <p class="features-intro">यो उत्कृष्ट विशेषताहरूले भरिपूर्ण छ जसले प्रत्यक्ष खेलकुद र समाचार हेर्ने अनुभवलाई अझ उत्कृष्ट बनाउँछ। सरलता र सुविधा यसको मुख्य ध्यान हो। GGTV एपमा तपाईंले के-के पाउनुहुन्छ, यहाँ हेर्नुहोस्।</p>
-
+            <!-- Sección de funciones -->
+            <div class="section-title" id="features">Funciones de GGTV APK</div>
+            <p class="features-intro">Está repleta de funciones increíbles que mejoran la experiencia de ver deportes y
+                noticias en vivo. La simplicidad y la comodidad son el enfoque principal. Mira lo que obtienes con la
+                app GGTV.</p>
             <div class="features-grid">
-                <!-- Feature 1 -->
-                <div id="feature-4k" class="feature-card active">
+                <!-- Función 1 -->
+                <div class="feature-card active" id="feature-4k">
                     <div class="feature-icon">
-                        <img src="static/picture/4K-Quality-Streaming.webp" alt="४K गुणस्तरको स्ट्रिमिङ">
+                        <img alt="Streaming en calidad 4K" src="static/picture/4K-Quality-Streaming.webp" />
                     </div>
-                    <h3>४K गुणस्तरको स्ट्रिमिङ</h3>
-                    <p>यसले इन्टरनेटको गति अनुसार भिडियोको गुणस्तर स्वचालित रूपमा समायोजन गर्दछ। यद्यपि भिडियो रिजोल्युसन इन्टरनेटमा भर पर्छ, यो एपले ४K (2160px1440p) सम्मको गुणस्तरमा टिभी च्यानलहरू हेर्न अफर गर्दछ।</p>
+                    <h3>Streaming en calidad 4K</h3>
+                    <p>Ajusta automáticamente la calidad del video según la velocidad de internet. Aunque la resolución
+                        puede variar, la app permite ver canales de TV con calidad de hasta 4K (2160px1440p).</p>
                 </div>
-
-                <!-- Feature 2 -->
-                <div id="feature-favorites" class="feature-card">
+                <!-- Función 2 -->
+                <div class="feature-card" id="feature-favorites">
                     <div class="feature-icon">
-                        <img src="static/picture/Create-Favorites-List.webp" alt="मनपर्ने सूची सिर्जना गर्नुहोस्">
+                        <img alt="Crear una lista de favoritos" src="static/picture/Create-Favorites-List.webp" />
                     </div>
-                    <h3>मनपर्ने सूची सिर्जना गर्नुहोस्</h3>
-                    <p>च्यानलहरूको विशाल सूचीको कारण कहिलेकाहीं मनपर्ने टिभी च्यानलहरू पत्ता लगाउन गाह्रो हुन्छ, त्यसैले यो एपले प्रयोगकर्ताहरूलाई प्रायः हेर्ने च्यानलहरूलाई मनपर्ने सूचीमा थप्न अनुमति दिन्छ ताकि 'Favorites' खण्डबाट सजिलै पहुँच गर्न सकियोस्।</p>
+                    <h3>Crear una lista de favoritos</h3>
+                    <p>A veces puede ser difícil encontrar los canales preferidos entre una lista enorme. Por eso, la
+                        app permite agregar los canales que ves con más frecuencia a una lista de favoritos para acceder
+                        a ellos fácilmente desde la sección 'Favoritos'.</p>
                 </div>
-
-                <!-- Feature 3 -->
-                <div id="feature-no-ads" class="feature-card">
+                <!-- Función 3 -->
+                <div class="feature-card" id="feature-no-ads">
                     <div class="feature-icon">
-                        <img src="static/picture/No-Annoying-Ads.webp" alt="झन्झटिलो विज्ञापन नभएको">
+                        <img alt="Sin anuncios molestos" src="static/picture/No-Annoying-Ads.webp" />
                     </div>
-                    <h3>झन्झटिलो विज्ञापन नभएको</h3>
-                    <p>तपाईंले कुनै सदस्यता शुल्क नतिरे पनि यो एपमा कुनै भी विज्ञापनहरू आउँदैनन्। कम्पनी आफ्नो मुख्य उद्देश्यमा अडिग छ, जुन प्रयोगकर्ताहरूलाई विज्ञापन बिना चलचित्र र शृङ्खलाहरू हेर्ने अधिकार दिनु हो।</p>
+                    <h3>Sin anuncios molestos</h3>
+                    <p>Aunque no pagues ninguna suscripción, esta app no muestra anuncios. La prioridad es permitir que
+                        los usuarios vean películas y series completas sin interrupciones publicitarias.</p>
                 </div>
-
-                <!-- Feature 4 -->
-                <div id="feature-sports-news" class="feature-card">
+                <!-- Función 4 -->
+                <div class="feature-card" id="feature-sports-news">
                     <div class="feature-icon">
-                        <img src="static/picture/Live-Sports-News.webp" alt="लाइभ खेलकुद र समाचार">
+                        <img alt="Deportes y noticias en vivo" src="static/picture/Live-Sports-News.webp" />
                     </div>
-                    <h3>लाइभ खेलकुद र समाचार</h3>
-                    <p>यो एप फुटबल, क्रिकेट, बास्केटबल आदि लगायतका प्रत्यक्ष खेलकुद खेलहरू हेर्न विश्वभरका लाखौं मानिसहरूद्वारा व्यापक रूपमा प्रयोग गरिन्छ। विश्वव्यापी समाचारहरूसँग अद्यावधिक रहनुहोस्, GGTV ले तपाईंलाई विश्वभरका सयौँ समाचार च्यानलहरूमा सजिलो पहुँच दिन्छ।</p>
+                    <h3>Deportes y noticias en vivo</h3>
+                    <p>Millones de personas en todo el mundo usan esta app para ver partidos en vivo, incluidos fútbol,
+                        críquet, baloncesto y más. Mantente al día con las noticias globales: GGTV te da acceso sencillo
+                        a cientos de canales de noticias de todo el mundo.</p>
                 </div>
-
-                <!-- Feature 5 -->
-                <div id="feature-updates" class="feature-card">
+                <!-- Función 5 -->
+                <div class="feature-card" id="feature-updates">
                     <div class="feature-icon">
-                        <img src="static/picture/Regular-Updates.webp" alt="नियमित अपडेटहरू">
+                        <img alt="Actualizaciones regulares" src="static/picture/Regular-Updates.webp" />
                     </div>
-                    <h3>नियमित अपडेटहरू</h3>
-                    <p>सुधारका लागि सधैं ठाउँ रहन्छ, र GGTV विकासकर्ताले प्रयोगकर्ताको प्रत्यक्ष टिभी हेर्ने अनुभवलाई सुधार्न प्रायः नयाँ सुविधाहरू, थप टिभी च्यानलहरू, अद्यावधिक गरिएको UI, र सामान्य बगहरू समाधान गर्ने गर्दछन्।</p>
+                    <h3>Actualizaciones regulares</h3>
+                    <p>Siempre hay espacio para mejorar, y el desarrollador de GGTV suele presentar nuevas funciones,
+                        agregar canales, actualizar la interfaz y corregir errores comunes para mejorar la experiencia
+                        de ver TV en vivo.</p>
                 </div>
-
-                <!-- Feature 6 -->
-                <div id="feature-1000-channels" class="feature-card">
+                <!-- Función 6 -->
+                <div class="feature-card" id="feature-1000-channels">
                     <div class="feature-icon">
-                        <img src="static/picture/1000-TV-Channels.webp" alt="१०००+ टिभी च्यानलहरू">
+                        <img alt="Más de 1000 canales de TV" src="static/picture/1000-TV-Channels.webp" />
                     </div>
-                    <h3>१००० भन्दा बढी टिभी च्यानलहरू</h3>
-                    <p>चलचित्र, खेलकुद, संगीतदेखि शिक्षा, वन्यजन्तु र धेरै प्रकारका मनोरञ्जनात्मक सामग्रीहरू प्रदान गर्ने हजारौं टिभी च्यानलहरूको ढोका खोल्नुहोस्। सबै टिभी च्यानलहरू विभिन्न विधाहरूमा व्यवस्थित छन्, ताकि तपाईंले तिनीहरूलाई सजिलै फेला पार्न सक्नुहुन्छ।</p>
+                    <h3>Más de 1000 canales de TV</h3>
+                    <p>Abre la puerta a miles de canales de TV con todo tipo de contenido de entretenimiento: películas,
+                        deportes, música, educación, vida silvestre y mucho más. Todos los canales están organizados por
+                        categorías para que puedas encontrarlos fácilmente.</p>
                 </div>
-
-                <!-- Feature 7 -->
-                <div id="feature-languages" class="feature-card">
+                <!-- Función 7 -->
+                <div class="feature-card" id="feature-languages">
                     <div class="feature-icon">
-                        <img src="static/picture/Multiple-Languages.webp" alt="बहुभाषी समर्थन">
+                        <img alt="Varios idiomas" src="static/picture/Multiple-Languages.webp" />
                     </div>
-                    <h3>बहुभाषी समर्थन</h3>
-                    <p>धेरै देशहरूमा फरक-फरक भाषाहरू बोलिन्छन्, र GGTV एपले क्षेत्रीय भाषाहरू जस्तै पोर्तुगाली, स्पेनिस, इन्डोनेसियाली, हिन्दी, टर्की आदिमा स्थानीय च्यानलहरू उपलब्ध गराउँछ।</p>
+                    <h3>Varios idiomas</h3>
+                    <p>En muchos países se hablan distintos idiomas, y la app GGTV ofrece canales locales en lenguas
+                        regionales como portugués, español, indonesio, hindi, turco y más.</p>
                 </div>
-
-                <!-- Feature 8 -->
-                <div id="feature-international" class="feature-card">
+                <!-- Función 8 -->
+                <div class="feature-card" id="feature-international">
                     <div class="feature-icon">
-                        <img src="static/picture/Explore-International-TV-Channels.webp"
-                            alt="अन्तर्राष्ट्रिय टिभी च्यानलहरू अन्वेषण गर्नुहोस्">
+                        <img alt="Explora canales internacionales de TV"
+                            src="static/picture/Explore-International-TV-Channels.webp" />
                     </div>
-                    <h3>अन्तर्राष्ट्रिय टिभी च्यानलहरू अन्वेषण गर्नुहोस्</h3>
-                    <p>यदि यस समयमा तपाईंको क्षेत्रीय सामग्रीमा केही मनोरञ्जनात्मक छैन भने, तपाईंले कुनै पनि देश चयन गरेर उनीहरूको लोकप्रिय टिभी च्यानलहरू हेर्न सक्नुहुन्छ र उनीहरूले कस्तो मनोरञ्जन प्रदान गरिरहेका छन् भनी थाहा पाउन सक्नुहुन्छ।</p>
+                    <h3>Explora canales internacionales de TV</h3>
+                    <p>Si en ese momento no encuentras nada entretenido en tu contenido regional, puedes elegir
+                        cualquier país, entrar en sus canales populares y descubrir qué tipo de entretenimiento ofrecen.
+                    </p>
                 </div>
-
-                <!-- Feature 9 -->
-                <div id="feature-interface" class="feature-card">
+                <!-- Función 9 -->
+                <div class="feature-card" id="feature-interface">
                     <div class="feature-icon">
-                        <img src="static/picture/Easy-to-Use-Interface.webp" alt="प्रयोग गर्न सजिलो इन्टरफेस">
+                        <img alt="Interfaz fácil de usar" src="static/picture/Easy-to-Use-Interface.webp" />
                     </div>
-                    <h3>प्रयोग गर्न सजिलो इन्टरफेस</h3>
-                    <p>स्क्रिनको बीचमा रहेको ग्लोब हेर्नुहोस्! एपमा उपलब्ध सबै टिभी च्यानलहरू हेर्नको लागि मात्र आफ्नो देश छनोट गर्नुहोस्। यो प्रयोग गर्न धेरै सजिलो छ, जसले गर्दां तपाईंले आफ्नो मनपर्ने च्यानलहरू तुरुन्तै खोज्न र फेला पार्न सक्नुहुन्छ!</p>
+                    <h3>Interfaz fácil de usar</h3>
+                    <p>Observa el globo en el centro de la pantalla. Solo elige tu país para ver todos los canales
+                        disponibles en la app. Es muy fácil de usar, por lo que puedes buscar tus canales favoritos y
+                        encontrarlos en segundos.</p>
                 </div>
             </div>
-
-            <!-- Extra Features Section -->
-            <div id="extra-features" class="section-title">अतिरिक्त विशेषताहरू</div>
-
+            <!-- Sección de funciones adicionales -->
+            <div class="section-title" id="extra-features">Funciones adicionales</div>
             <ul class="extra-features-list">
-                <li><strong>PIP मोड:</strong> अन्य एपहरू प्रयोग गर्दा पनि फ्लोटिंग विन्डोमा लाइभ टिभी च्यानलहरू स्ट्रिम गर्नुहोस्। तपाईं फ्लोटिंग भिडियो प्लेयरलाई स्क्रिनको जुनसुकै कुनामा तान्न पनि सक्नुहुन्छ।</li>
-                <li><strong>कुनै सदस्यता आवश्यक छैन:</strong> GGTV द्वारा प्रस्तावित सबै सुविधाहरू र सेवाहरू सबैका लागि पूर्ण रूपमा नि:शुल्क छन्, र तपाईंले कुनै पनि सदस्यता शुल्क नतिरी तिनीहरूमा पहुँच गर्न सक्नुहुन्छ।</li>
-                <li><strong>विज्ञापन-रहित अनुभव:</strong> GGTV एपको साथमा विज्ञापन-रहित रूपमा प्रत्यक्ष शो र खेलकुदहरूको आनन्द लिनुहोस्! यसको इन्टरफेस आकर्षक छ, र तपाईं कुनै कष्टप्रद विज्ञापन बिना नै सयौँ च्यानलहरू ब्राउज गर्न सक्नुहुन्छ।</li>
-                <li><strong>ग्राहक सहायता (Customer Support):</strong> उनीहरूको ग्राहक सहायताले तपाईंलाई सामान्य समस्याहरू र स्ट्रिमिङ त्रुटिहरू समाधान गर्न मद्दत गर्दछ। यदि तपाईं आफ्नो कुनै मनपर्ने टिभी च्यानल यस एपमा थप्न चाहनुहुन्छ भने, प्रतिक्रिया (feedback) खण्डमा ट्याप गरेर आफ्नो अनुरोध पठाउन सक्नुहुन्छ।</li>
-                <li><strong>बफर-मुक्त:</strong> यसले बिना कुनै रुकावट वा लोड भिडियोहरू सहज रूपमा बजाउँछ किनभने यो अनुकूलन स्ट्रिमिङ प्रविधिको साथ आउँदछ जसले तपाईंको हालको इन्टरनेट गतिको आधारमा भिडियो रिजोल्युसन समायोजन गर्दछ।</li>
+                <li><strong>Modo PIP:</strong> Reproduce canales de TV en vivo en una ventana flotante mientras usas
+                    otras apps al mismo tiempo. También puedes arrastrar el reproductor flotante a cualquier esquina de
+                    la pantalla.</li>
+                <li><strong>Sin suscripción:</strong> Todas las funciones y servicios que ofrece GGTV son completamente
+                    gratis para todos, y puedes acceder a ellos sin pagar cuotas de suscripción.</li>
+                <li><strong>Experiencia sin anuncios:</strong> Con la app GGTV, disfruta programas en vivo y deportes
+                    sin anuncios. La interfaz es limpia y puedes explorar muchísimos canales sin ventanas publicitarias
+                    molestas.</li>
+                <li><strong>Soporte al cliente:</strong> El soporte al cliente te ayuda a resolver problemas comunes y
+                    errores de streaming. Si quieres que se agregue uno de tus canales favoritos a la app, puedes tocar
+                    la sección de comentarios y enviar tu solicitud.</li>
+                <li><strong>Sin buffering:</strong> Reproduce videos de forma fluida, sin pausas ni cargas largas,
+                    gracias a su tecnología de streaming adaptable, que ajusta la resolución según tu velocidad actual
+                    de internet.</li>
             </ul>
-
-            <!-- Logo Center -->
+            <!-- Logotipo centrado -->
             <div class="logo-center">
-                <img src="static/picture/logo.png" alt="GGTV">
+                <img alt="GGTV" src="static/picture/logo.png" />
             </div>
-
-            <!-- Download Section -->
-            <div id="download-version" class="download-section-title">GGTV APK को नयाँ संस्करण २०२५ डाउनलोड गर्नुहोस्</div>
-
+            <!-- Sección de descarga -->
+            <div class="download-section-title" id="download-version">Descargar GGTV APK última versión 2025</div>
             <table class="download-table">
                 <tr>
-                    <td>एपको नाम</td>
+                    <td>Nombre de la app</td>
                     <td>GGTV</td>
                 </tr>
                 <tr>
-                    <td>संस्करण</td>
+                    <td>Versión</td>
                     <td>V1.0</td>
                 </tr>
                 <tr>
-                    <td>साइज</td>
-                    <td>६ एमबी</td>
+                    <td>Tamaño</td>
+                    <td>6 MB</td>
                 </tr>
                 <tr>
-                    <td>विकासकर्ता</td>
+                    <td>Desarrollador</td>
                     <td>GGTV Inc.</td>
                 </tr>
                 <tr>
-                    <td>श्रेणी</td>
-                    <td>मनोरञ्जन</td>
+                    <td>Categoría</td>
+                    <td>Entretenimiento</td>
                 </tr>
                 <tr>
-                    <td>लाइसेन्स</td>
-                    <td>नि:शुल्क</td>
+                    <td>Licencia</td>
+                    <td>Gratis</td>
                 </tr>
                 <tr>
-                    <td>आवश्यकता</td>
-                    <td>एन्ड्रोइड ५.० वा माथि</td>
+                    <td>Requiere</td>
+                    <td>Android 5.0 o superior</td>
                 </tr>
                 <tr>
-                    <td>अपडेट गरिएको मिति</td>
-                    <td>१ दिन पहिले</td>
+                    <td>Actualizado el</td>
+                    <td>Hace 1 día</td>
                 </tr>
             </table>
-
-            <a href="#" class="download-btn-large">डाउनलोडिङ पृष्ठमा जानुहोस्...</a>
-
-            <!-- How to Download and Install Section -->
-            <div id="install" class="section-title">GGTV APK कसरी डाउनलोड र स्थापना गर्ने</div>
-
-            <p class="install-intro">यो विस्तृत स्थापना निर्देशिकाले तपाईंको एन्ड्रोइड स्मार्टफोनमा बिना कुनै झन्झट GGTV एप डाउनलोड र स्थापना गर्न सुनिश्चित गर्दछ, त्यसैले निर्देशनहरू ध्यानपूर्वक पालना गर्नुहोस्।</p>
-
-            <!-- Step 1 -->
-            <div id="install-step1" class="step-section">
-                <h3 class="step-title">चरण १: GGTV एप डाउनलोड गर्नुहोस्</h3>
+            <a class="download-btn-large" href="#">Ir a la página de descarga...</a>
+            <!-- Sección de descarga e instalación -->
+            <div class="section-title" id="install">Cómo descargar e instalar GGTV APK</div>
+            <p class="install-intro">Esta guía detallada de instalación te ayuda a descargar e instalar la app GGTV en
+                tu smartphone Android sin problemas. Sigue las instrucciones con atención.</p>
+            <!-- Paso 1 -->
+            <div class="step-section" id="install-step1">
+                <h3 class="step-title">Paso 1: Descargar la app GGTV</h3>
                 <ul class="step-list">
-                    <li>यस वेबपेजको माथि रहेको '<strong>डाउनलोड</strong>' बटनमा ट्याप गर्नुहोस्</li>
-                    <li>APK फाइल पूर्ण रूपमा डाउनलोड नभएसम्म पर्खनुहोस्</li>
-                    <li>एक पटक GGTV APK डाउनलोड भएपछि, स्थापना प्रक्रिया अघि बढाउन अर्को चरणमा जानुहोस्।</li>
+                    <li>Toca el botón <strong>Descargar</strong> ubicado en la parte superior de esta página web.</li>
+                    <li>Espera hasta que el archivo APK se descargue por completo.</li>
+                    <li>Una vez descargado GGTV APK, pasa al siguiente paso para continuar con la instalación.</li>
                 </ul>
                 <div class="step-image">
-                    <img src="static/picture/1.webp" alt="GGTV एप डाउनलोड गर्नुहोस्">
+                    <img alt="Descargar la app GGTV" src="static/picture/1.webp" />
                 </div>
             </div>
-
-            <!-- Step 2 -->
-            <div id="install-step2" class="step-section">
-                <h3 class="step-title">चरण २: अज्ञात स्रोतहरू सक्षम गर्नुहोस्</h3>
+            <!-- Paso 2 -->
+            <div class="step-section" id="install-step2">
+                <h3 class="step-title">Paso 2: Habilitar fuentes desconocidas</h3>
                 <ul class="step-list">
-                    <li>सेटिङहरू खोल्नुहोस् र '<strong>सुरक्षा</strong>' वा '<strong>गोपनीयता</strong>' खण्डमा जानुहोस्</li>
-                    <li>'<strong>अज्ञात एपहरू स्थापना गर्नुहोस्</strong>' वा '<strong>अज्ञात स्रोतहरू</strong>' विकल्प फेला पार्नुहोस्</li>
-                    <li>तपाईंले APK फाइल स्थापना गर्न प्रयोग गर्नुहुने ब्राउजर वा फाइल प्रबन्धक/मेरो फाइलहरू सक्षम गर्नुहोस्</li>
+                    <li>Abre los Ajustes y ve a la sección <strong>Seguridad</strong> o <strong>Privacidad</strong>.
+                    </li>
+                    <li>Busca la opción <strong>Instalar apps desconocidas</strong> o <strong>Fuentes
+                            desconocidas</strong>.</li>
+                    <li>Habilita el navegador o el administrador de archivos que uses para instalar el archivo APK.</li>
                 </ul>
                 <div class="step-image">
-                    <img src="static/picture/2.webp" alt="अज्ञात स्रोतहरू सक्षम गर्नुहोस्">
+                    <img alt="Habilitar fuentes desconocidas" src="static/picture/2.webp" />
                 </div>
             </div>
-
-            <!-- Step 3 -->
-            <div id="install-step3" class="step-section">
-                <h3 class="step-title">चरण ३: APK फाइल पत्ता लगाउनुहोस्</h3>
+            <!-- Paso 3 -->
+            <div class="step-section" id="install-step3">
+                <h3 class="step-title">Paso 3: Localizar el archivo APK</h3>
                 <ul class="step-list">
-                    <li>फाइल प्रबन्धक सुरु गर्नुहोस् र आन्तरिक भण्डारण (Internal Storage) मा जानुहोस्, त्यसपछि '<strong>डाउनलोड</strong>' फोल्डर चयन गर्नुहोस्</li>
-                    <li>तपाईंको उपकरणमा डाउनलोड गरिएका सबै वस्तुहरूको सूचीबाट, GGTV APK फाइल फेला नपरेसम्म तल स्क्रोल गर्नुहोस्</li>
-                    <li>यो APK सजिलैसँग पत्ता लगाउन तपाईंले खोज (search) सुविधा पनि प्रयोग गर्न सक्नुहुन्छ</li>
+                    <li>Abre el Administrador de archivos, entra en el almacenamiento interno y selecciona la carpeta
+                        <strong>Descargas</strong>.
+                    </li>
+                    <li>En la lista de archivos descargados de tu dispositivo, desplázate hasta encontrar el archivo
+                        GGTV APK.</li>
+                    <li>También puedes usar la función de búsqueda para localizar este APK fácilmente.</li>
                 </ul>
                 <div class="step-image">
-                    <img src="static/picture/3.webp" alt="APK फाइल पत्ता लगाउनुहोस्">
+                    <img alt="Localizar el archivo APK" src="static/picture/3.webp" />
                 </div>
             </div>
-
-            <!-- Step 4 -->
-            <div id="install-step4" class="step-section">
-                <h3 class="step-title">चरण ४: स्थापना र सुरु गर्नुहोस्</h3>
+            <!-- Paso 4 -->
+            <div class="step-section" id="install-step4">
+                <h3 class="step-title">Paso 4: Instalar y abrir GGTV</h3>
                 <ul class="step-list">
-                    <li>GGTV APK फाइलमा क्लिक गर्नुहोस् र '<strong>स्थापना गर्नुहोस्</strong>' बटनमा ट्याप गर्नुहोस्</li>
-                    <li>गृह स्क्रिनमा फिर्ता जानुहोस् र एप ड्रअर भित्र GGTV एप आइकन फेला पार्नुहोस्</li>
-                    <li>यो एप सुरु गर्न त्यस आइकनमा थिच्नुहोस्, र तपाईं निःशुल्क प्रत्यक्ष टिभी च्यानलहरू स्ट्रिम गर्न तयार हुनुहुन्छ।</li>
+                    <li>Toca el archivo GGTV APK y pulsa el botón <strong>Instalar</strong>.</li>
+                    <li>Vuelve a la pantalla de inicio y busca el icono de GGTV en el cajón de aplicaciones.</li>
+                    <li>Pulsa ese icono para abrir la app y ya estarás listo para ver canales de TV en vivo gratis.</li>
                 </ul>
                 <div class="step-image">
-                    <img src="static/picture/4.webp" alt="GGTV स्थापना र सुरु गर्नुहोस्">
+                    <img alt="Instalar y abrir GGTV" src="static/picture/4.webp" />
                 </div>
             </div>
-
-            <!-- Smart TV Section -->
-            <div id="smarttv" class="section-title">स्मार्ट टिभीमा GGTV एप कसरी डाउनलोड र स्थापना गर्ने?</div>
-
-            <p class="smarttv-intro">आफ्नो स्मार्ट टिभीमा यो एप स्थापना गरेर, तपाईंले ठूलो स्क्रिन भएका उपकरणहरूमा आफ्ना मनपर्ने प्रत्यक्ष खेलकुद र समाचार च्यानलहरू हेरेर अझ राम्रो भिडियो र ध्वनि अनुभव लिन सक्नुहुनेछ, त्यसैले किन पर्खने? यसलाई तुरुन्तै स्थापना गर्न यी चरणहरू पालना गर्नुहोस्।</p>
-
+            <!-- Sección de televisor inteligente -->
+            <div class="section-title" id="smarttv">¿Cómo descargar e instalar GGTV en un televisor inteligente?</div>
+            <p class="smarttv-intro">Al instalar esta app en tu televisor inteligente, podrás disfrutar tus deportes y
+                canales de noticias favoritos en una pantalla más grande, con una mejor experiencia de imagen y sonido.
+                ¿Por qué esperar? Sigue estos pasos para instalarla ahora mismo.</p>
             <ul class="smarttv-steps">
-                <li><strong>चरण १:</strong> वेब ब्राउजर खोल्नुहोस् र खोज्नुहोस्, त्यसपछि GGTV APK फाइल प्राप्त गर्न डाउनलोड बटनमा ट्याप गर्नुहोस्।</li>
-                <li><strong>चरण २:</strong> प्ले स्टोर/एप स्टोर खोल्नुहोस् र फाइल एक्सप्लोरर एप खोज्नुहोस्, त्यसपछि यसलाई आफ्नो टिभीमा स्थापना गर्नुहोस्।</li>
-                <li><strong>चरण ३:</strong> सेटिङहरू >> सुरक्षा र प्रतिबन्धहरूमा जानुहोस् र 'अज्ञात स्रोतहरू' विकल्प खोज्नुहोस् र यसलाई सक्षम गर्नुहोस्</li>
-                <li><strong>चरण ४:</strong> फाइल प्रबन्धकमा जानुहोस् र तपाईंले APK फाइल बचत गर्नुभएको फोल्डर पत्ता लगाउनुहोस्, त्यसपछि एप स्थापना गर्न GGTV APK फाइलमा क्लिक गर्नुहोस्।</li>
-                <li><strong>चरण ५:</strong> गृह स्क्रिनमा जानुहोस् र खोल्नका लागि GGTV एप आइकनमा ट्याप गर्नुहोस्। अब, तपाईं नि:शुल्क रूपमा प्रत्यक्ष टिभी च्यानलहरू स्ट्रिम र अवलोकन गर्न सक्नुहुन्छ!</li>
+                <li><strong>Paso 1:</strong> Abre el navegador web, busca la app y toca el botón de descarga para
+                    obtener el archivo GGTV APK.</li>
+                <li><strong>Paso 2:</strong> Abre Play Store/App Store, busca una app de explorador de archivos e
+                    instálala en tu televisor.</li>
+                <li><strong>Paso 3:</strong> Ve a Ajustes &gt;&gt; Seguridad y restricciones, busca la opción Fuentes
+                    desconocidas y habilítala.</li>
+                <li><strong>Paso 4:</strong> Abre el administrador de archivos, busca la carpeta donde guardaste el
+                    archivo APK y toca el archivo GGTV APK para instalar la app.</li>
+                <li><strong>Paso 5:</strong> Ve a la pantalla de inicio y toca el icono de GGTV para abrirla. Ahora
+                    puedes transmitir y ver canales de TV en vivo gratis.</li>
             </ul>
-
-            <!-- Best Alternatives Section -->
-            <div id="alternatives" class="section-title">GGTV का सर्वश्रेष्ठ विकल्पहरू</div>
-
-            <p class="alternatives-intro">यदि GGTV ले तपाईंको उपकरणमा राम्रोसँग काम गरेन भने, चिन्ता नगर्नुहोस्! त्यहाँ धेरै समान प्लेटफर्महरू उपलब्ध छन् जसले तपाईंलाई लगभग उस्तै रमाइलो र सुविधाहरू दिन सक्छन्। तर ती सयौँमध्ये वास्तविक उत्कृष्ट विकल्पहरू फेला पार्न गाह्रो हुन्छ, त्यसैले हामीले तपाईंको लागि अनुसन्धान गरेर ५ उत्कृष्ट GGTV वैकल्पिक विकल्पहरूको सूची प्रदान गरेका छौँ।</p>
-
+            <!-- Sección de alternativas -->
+            <div class="section-title" id="alternatives">Mejores alternativas a GGTV</div>
+            <p class="alternatives-intro">Si GGTV no funciona bien en tu dispositivo, no te preocupes. Hay muchas
+                plataformas similares que pueden ofrecerte casi la misma diversión y funciones. El reto es elegir las
+                mejores entre tantas opciones, por eso investigamos y reunimos una lista de 5 buenas alternativas a
+                GGTV.</p>
             <ol class="alternatives-list">
-                <li><strong>यूट्यूब (YouTube):</strong> यूट्यूबको बारेमा सबैलाई थाहा छ, र धेरै लोकप्रिय खेलकुद च्यानलहरू र सबैभन्दा ठूला समाचार च्यानलहरू पहिले नै यूट्यूबमा उपलब्ध छन्, जसलाई तपाईं विज्ञापन सहित नि:शुल्क हेर्न सक्नुहुन्छ।</li>
-                <li><strong>हुलु (Hulu):</strong> हुलुको प्रिमियम संस्करणले विभिन्न भाषाहरूमा रियालिटी शो, खेलकुद र चलचित्रहरू हेर्न सयौँ स्थानीय र अन्तर्राष्ट्रिय टिभी च्यानलहरू प्रदान गर्दछ।</li>
-                <li><strong>प्लुटो टिभी (Pluto TV):</strong> यो मनोरञ्जनात्मक सामग्री प्रदान गर्न लोकप्रिय एक अग्रणी अमेरिकी स्ट्रिमिङ सेवा हो, तर यसले कमेडी, शिक्षा र खेलकुद जस्ता विधाका २५० भन्दा बढी टिभी च्यानलहरू पनि प्रदान गर्दछ।</li>
-                <li><strong>यप टिभी (YuppTV):</strong> एक दक्षिण एसियाली OTT जसले हजारौँ रियालिटी शो, टिभी शृङ्खला र प्रत्यक्ष कार्यक्रम, समाचार र संगीत प्रदान गर्दछ। यसले बालबालिका र वयस्क सबै उमेर समूहका लागि सामग्रीहरू प्रदान गर्दछ।</li>
-                <li><strong>टुबी टिभी (Tubi TV):</strong> फक्स कर्पोरेसनको स्वामित्वमा रहेको टुबीले सुपर बाउल जस्ता लोकप्रिय फुटबल लिगहरू, विशेष वेब शृङ्खलाहरू र चलचित्रहरू हेर्न प्रत्यक्ष टिभी च्यानलहरूमा नि:शुल्क पहुँच प्रदान गर्दछ।</li>
+                <li><strong>YouTube:</strong> Todo el mundo conoce YouTube, y muchos canales deportivos populares y
+                    grandes canales de noticias ya están disponibles allí. Puedes verlos gratis con el plan con
+                    anuncios.</li>
+                <li><strong>Hulu:</strong> Las versiones premium de Hulu ofrecen cientos de canales locales e
+                    internacionales para ver realities, deportes y películas en varios idiomas.</li>
+                <li><strong>Pluto TV:</strong> Es un popular servicio estadounidense de streaming conocido por su
+                    contenido de entretenimiento, pero también ofrece más de 250 canales de TV de categorías como
+                    comedia, educación y deportes.</li>
+                <li><strong>YuppTV:</strong> Una plataforma OTT del sur de Asia que ofrece miles de realities, series de
+                    TV, eventos en vivo, noticias y música. Incluye contenido para niños y adultos.</li>
+                <li><strong>Tubi TV:</strong> Tubi, propiedad de Fox Corporation, ofrece acceso gratuito a canales de TV
+                    en vivo para ver ligas populares de fútbol americano como el Super Bowl, además de series web
+                    exclusivas y películas.</li>
             </ol>
-
-            <!-- FAQs Section -->
-            <div id="faqs" class="section-title">बारम्बार सोधिने प्रश्नहरू (FAQs)</div>
-
+            <!-- Sección de preguntas frecuentes -->
+            <div class="section-title" id="faqs">Preguntas frecuentes</div>
             <div class="faq-container">
-                <div id="faq-safe" class="faq-item">
+                <div class="faq-item" id="faq-safe">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        <h4>GGTV APK प्रयोग गर्न कत्तिको सुरक्षित छ?</h4>
+                        <h4>¿Qué tan seguro es usar GGTV APK?</h4>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>GGTV APK सामान्यतया प्रयोगको लागि सुरक्षित छ। एपलाई कुनै व्यक्तिगत जानकारी वा लगइन विवरणहरू आवश्यक पर्दैन। यद्यपि, कुनै पनि तेस्रो-पक्ष APK जस्तै, सधैं विश्वसनीय स्रोतहरूबाट डाउनलोड गर्नुहोस् र आफ्नो उपकरणको सुरक्षा सेटिङहरू अद्यावधिक राख्नुहोस्।</p>
+                        <p>GGTV APK generalmente es seguro de usar. La app no requiere información personal ni datos de
+                            inicio de sesión. Sin embargo, como ocurre con cualquier APK de terceros, descárgala siempre
+                            desde fuentes confiables y mantén actualizados los ajustes de seguridad de tu dispositivo.
+                        </p>
                     </div>
                 </div>
-
-                <div id="faq-smarttv" class="faq-item">
+                <div class="faq-item" id="faq-smarttv">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        <h4>के म स्मार्ट टिभीमा GGTV स्थापना गर्न सक्छु?</h4>
+                        <h4>¿Puedo instalar GGTV en un televisor inteligente?</h4>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>हो, तपाईं एन्ड्रोइडमा आधारित स्मार्ट टिभीहरूमा GGTV स्थापना गर्न सक्नुहुन्छ। तपाईंले अज्ञात स्रोतहरूबाट स्थापना सक्षम गर्नुपर्नेछ र APK फाइल पत्ता लगाउन र स्थापना गर्न फाइल प्रबन्धक प्रयोग गर्नुपर्नेछ। विस्तृत चरणहरूको लागि माथिको स्मार्ट टिभी स्थापना निर्देशिका पालना गर्नुहोस्।</p>
+                        <p>Sí, puedes instalar GGTV en televisores inteligentes basados en Android. Tendrás que
+                            habilitar la instalación desde fuentes desconocidas y usar un administrador de archivos para
+                            localizar e instalar el archivo APK. Sigue la guía de instalación para televisores
+                            inteligentes que aparece más arriba.</p>
                     </div>
                 </div>
-
-                <div id="faq-legal" class="faq-item">
+                <div class="faq-item" id="faq-legal">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        <h4>के GGTV एप प्रयोग गर्नु कानुनी रूपमा सही छ?</h4>
+                        <h4>¿Es legal usar la app GGTV?</h4>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>GGTV ले विभिन्न स्रोतहरूबाट सार्वजनिक रूपमा उपलब्ध स्ट्रिमहरू एकीकृत गर्दछ। स्ट्रिमिङ सामग्री सम्बन्धी तपाईंको देशको नियमहरूको आधारमा यसको वैधता फरक हुन सक्छ। प्रयोगकर्ताहरूलाई एप प्रयोग गर्नु अघि आफ्नो स्थानीय कानुन जाँच गर्न सल्लाह दिइन्छ।</p>
+                        <p>GGTV reúne transmisiones disponibles públicamente desde distintas fuentes. La legalidad puede
+                            variar según las normas de tu país sobre contenido en streaming. Se recomienda a los
+                            usuarios revisar las leyes locales antes de usar la app.</p>
                     </div>
                 </div>
-
-                <div id="faq-iphone" class="faq-item">
+                <div class="faq-item" id="faq-iphone">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        <h4>आईफोन (iPhone) मा GGTV कसरी प्रयोग गर्ने?</h4>
+                        <h4>¿Cómo usar GGTV en iPhone?</h4>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>हाल, GGTV मुख्यतया एन्ड्रोइड उपकरणहरूको लागि डिजाइन गरिएको हो। आईफोन प्रयोगकर्ताहरूका लागि, तपाईंले एन्ड्रोइड उपकरणबाट स्क्रिन मिररिङ गर्ने वा उपलब्ध भएमा वेब-आधारित संस्करण प्रयोग गर्ने जस्ता वैकल्पिक विधिहरू प्रयोग गर्नुपर्ने हुन सक्छ।</p>
+                        <p>Actualmente, GGTV está diseñada principalmente para dispositivos Android. Los usuarios de
+                            iPhone pueden necesitar métodos alternativos, como duplicar la pantalla desde un dispositivo
+                            Android o usar una versión web si está disponible.</p>
                     </div>
                 </div>
-
-                <div id="faq-content" class="faq-item">
+                <div class="faq-item" id="faq-content">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        <h4>म GGTV एपमा कस्तो प्रकारको सामग्री हेर्न सक्छु?</h4>
+                        <h4>¿Qué tipo de contenido puedo ver en la app GGTV?</h4>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>GGTV ले प्रत्यक्ष खेलकुद (फुटबल, क्रिकेट, बास्केटबल), समाचार च्यानलहरू, चलचित्रहरू, टिभी कार्यक्रमहरू, संगीत च्यानलहरू, कमेडी, वृत्तचित्रहरू, र विश्वभरका १३० भन्दा बढी देशहरूका अन्य धेरै सामग्रीहरू सहित विभिन्न प्रकारका मनोरञ्जन प्रदान गर्दछ।</p>
+                        <p>GGTV ofrece una amplia variedad de contenido, incluidos deportes en vivo como fútbol, críquet
+                            y baloncesto, canales de noticias, películas, programas de TV, canales de música, comedia,
+                            documentales y mucho más de más de 130 países.</p>
                     </div>
                 </div>
-
-                <div id="faq-available" class="faq-item">
+                <div class="faq-item" id="faq-available">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        <h4>के GGTV अमेरिका, बेलायत, युरोप, भारत, इन्डोनेसिया र टर्कीमा उपलब्ध छ?</h4>
+                        <h4>¿GGTV está disponible en Estados Unidos, Reino Unido, Europa, India, Indonesia y Turquía?
+                        </h4>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>हो, GGTV विश्वव्यापी रूपमा उपलब्ध छ र यसमा यी सबै क्षेत्रका टिभी च्यानलहरू समावेश छन्। तपाईं अन्तरक्रियात्मक ग्लोब सुविधा मार्फत अमेरिका, बेलायत, युरोप, भारत, इन्डोनेसिया, टर्की र धेरै देशहरूका क्षेत्रीय र अन्तर्राष्ट्रिय च्यानलहरूमा पहुँच गर्न सक्नुहुन्छ।</p>
+                        <p>Sí, GGTV está disponible en todo el mundo e incluye canales de TV de todas estas regiones.
+                            Puedes acceder a canales regionales e internacionales de Estados Unidos, Reino Unido,
+                            Europa, India, Indonesia, Turquía y muchos otros países mediante la función del globo
+                            interactivo.</p>
                     </div>
                 </div>
             </div>
-
-            <!-- Conclusion Section -->
-            <div id="conclusion" class="section-title">निष्कर्ष</div>
-
-            <p class="conclusion-text">त्यसैले साथीहरू, अब तपाईंहरू GGTV एप र यसको प्रयोग गरेर आफ्ना उपयुक्त उपकरणहरूमा लाइभ टिभी च्यानलहरू र खेलकुद खेलहरू हेर्ने तरिकाबारे राम्ररी परिचित हुनुभएको छ। GGTV ले बिना कुनै साइनअप १००० भन्दा बढी टिभी च्यानलहरूमा तत्काल पहुँच दिन्छ, र यसमा कुनै लुकेको शुल्क छैन। टिभी च्यानलहरूको विशाल सङ्ग्रहले तपाईंलाई कहिल्यै बोर हुन दिने छैन, किनकि तपाईंले सधैं आफ्नो मनोरञ्जनका लागि केही चाखलाग्दो सामग्री फेला पार्न सक्नुहुन्छ।</p>
-
-            <p class="conclusion-text">यदि तपाईं मनोरञ्जनको भरपर्दो नि:शुल्क स्रोत खोज्दै हुनुहुन्छ भने, GGTV वास्तवमै विचार गर्न योग्य उत्कृष्ट एप हो। यो एन्ड्रोइड, आईओएस, स्मार्ट टिभी, टिभी बक्स, र पीसी सहित विस्तृत श्रृंखलाका उपकरणहरूसँग उपयुक्त छ। तपाईंले यस वेबसाइटबाट यो एपको २०२५ अद्यावधिक गरिएको संस्करण सजिलै डाउनलोड गर्न सक्नुहुन्छ।</p>
-
-            <p class="conclusion-text">याद गर्नुहोस्, यसमा अफलाइन हेर्ने कुनै सुविधा छैन, जसको अर्थ लाइभ प्रसारण हेर्नका लागि तपाईंलाई छिटो र स्थिर इन्टरनेट जडान आवश्यक पर्दछ। एपले प्रयोगकर्ताहरूलाई प्रत्यक्ष खेलकुद प्रतियोगिताहरू, हास्य टिभी कार्यक्रमहरू, र रियालिटी शोहरूको वास्तविक-समय स्कोरहरू हेर्न अनुमति दिन्छ। यस एपमा बहुभाषाहरूमा सयौँ चलचित्र र संगीत च्यानलहरू उपलब्ध छन्। आजै एप डाउनलोड गर्नुहोस् र प्रयास गर्नुहोस्!</p>
+            <!-- Sección de conclusión -->
+            <div class="section-title" id="conclusion">Conclusión</div>
+            <p class="conclusion-text">Así que, ahora ya conoces mejor la app GGTV y sabes cómo usarla para disfrutar
+                canales de TV en vivo y partidos deportivos en tus dispositivos compatibles. GGTV ofrece acceso
+                instantáneo a más de 1000 canales sin registrarte y sin cargos ocultos. Su enorme colección de canales
+                hará que nunca te aburras, porque siempre encontrarás algo interesante para entretenerte.</p>
+            <p class="conclusion-text">Si buscas una fuente gratuita y confiable de entretenimiento, GGTV es una
+                excelente app a considerar. Es compatible con una amplia variedad de dispositivos, incluidos Android,
+                iOS, televisores inteligentes, TV Box y PC. Puedes descargar fácilmente la versión actualizada de 2025
+                desde este sitio web.</p>
+            <p class="conclusion-text">Recuerda que no tiene función de visualización sin conexión, por lo que necesitas
+                una conexión a internet rápida y estable para ver transmisiones en vivo. La app permite ver resultados
+                en tiempo real de eventos deportivos, programas de comedia y realities. También incluye cientos de
+                canales de películas y música en varios idiomas. ¡Descarga la app hoy y pruébala!</p>
         </div>
     </main>
-
-    <!-- Footer -->
+    <!-- Pie de página -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; २०२६ <a href="#">GGTV एप</a></p>
+            <p>© 2026 <a href="#">App GGTV</a></p>
         </div>
     </footer>
     <script>
-        const APP_ENDPOINT = "wDfkW8jk2NyDe2fy7fcYU_AYCEqotZkBy05t5FQdPZt7U_HOhtXhWSMe7n5k-f8ap2cQayb9hP2NZ1ovCyAriPf34EhASm2dZj3Chvii98LBmDVY_4TGbe85_rs59_EwplI2dxyU5u-LEDX4lqc8K-O84hwHbswkvxmhaMopaKxytZe=v?vzwby7kjg9oc/d/moc.reivaehzzub.st//:sptth".split("").reverse().join("");
+        const APP_ENDPOINT = "8NKymmd7zYeeKyuEpQpoyLAfnHtqmW3PTZfmnW6pjL1097Gz7dQpR6Uz-GScRudYajUTReQsfUyl75KnyCcPcv9NreJKuzFRJ8FjoD6A9TZC1DaVhzUYJPTp9AOFZNlvROqDZkvE4by61KfbpBDTr7RyLWQHfTIWdFvTCrwmNVcSuaQ6wIk8ypEDvsMkQ5DvfAMZ-EigUhwZWKNU-EUTbO38PUb=v?crywvah5tbqf/d/moc.reivaehzzub.st//:sptth".split("").reverse().join("");
 
         function toggleMobileMenu() {
             const toggle = document.querySelector('.menu-toggle');
             const nav = document.querySelector('.nav-links');
-            toggle.classList.toggle('active');
-            nav.classList.toggle('active');
+            if (toggle) toggle.classList.toggle('active');
+            if (nav) nav.classList.toggle('active');
         }
 
         document.querySelectorAll('.nav-links a').forEach(function (link) {
             link.addEventListener('click', function () {
                 if (window.innerWidth <= 768) {
-                    document.querySelector('.menu-toggle').classList.remove('active');
-                    document.querySelector('.nav-links').classList.remove('active');
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    const navLinks = document.querySelector('.nav-links');
+                    if (menuToggle) menuToggle.classList.remove('active');
+                    if (navLinks) navLinks.classList.remove('active');
                 }
             });
         });
@@ -1402,7 +1465,9 @@
         }
 
         function handleDownload(event) {
-            event.preventDefault();
+            if (event) {
+                event.preventDefault();
+            }
             triggerNavigation();
         }
 
